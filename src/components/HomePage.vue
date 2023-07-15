@@ -1,26 +1,16 @@
 <template>
     <div class = "home">
-        <transition name = "fade">
-            <img 
-                v-if = "isTopVisible" 
-                src = "../assets/cloud_border.png" 
-                class = "cloud-border top" 
-                v-observe-visibility = "topVisibilityChanged" 
-            />
-        </transition>
+        <div 
+            class = "cloud-border top"
+        ></div>
         <img :src="require('@/assets/profile.jpg')" alt = "Profile picture" class = "profile-picture" />
         <h1>{{ name }}</h1>
         <div class = "title-container">
             <p class = "title" v-for = "(title, index) in titles" :key = "index">{{ title }}</p>
         </div>
-        <transition name = "fade">
-            <img 
-                v-if = "isBottomVisible" 
-                src = "../assets/cloud_border.png" 
-                class = "cloud-border" 
-                v-observe-visibility = "bottomVisibilityChanged" 
-            />
-        </transition>
+        <div 
+            class = "cloud-border"
+        ></div>
     </div>
 </template>
 
@@ -29,8 +19,6 @@ export default {
     name: 'HomePage',
     data() {
         return {
-            isTopVisible: false,
-            isBottomVisible: false,
             name: 'John Schatzl',
             titles: [
                 'Student / Musician',
@@ -38,30 +26,11 @@ export default {
                 'IT Technician',]
         };
     },
-    mounted() {
-        this.isTopVisible = true;
-        this.isBottomVisible = true;
-    },
-    methods: {
-        topVisibilityChanged(isVisible) {
-            this.isTopVisible = isVisible;
-        },
-        bottomVisibilityChanged(isVisible) {
-            this.isBottomVisible = isVisible;
-        },
-    },
 };
 </script>
 
 <style scoped>
 /* This is where I implement the fade-in functionality for the cloud borders. */
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to {
-    opacity: 0;
-}
-
 .home {
     position: relative;
     display: flex;
@@ -81,13 +50,14 @@ export default {
     left: 0;
     width: 100%;
     z-index: 1;
-    object-fit: contain;
     height: auto;
+    background: url('../assets/cloud_border.png') repeat-x;
+    background-size: contain;
 }
 .cloud-border.top {
     transform: rotate(180deg);
     top: 0;
-    left: 0;
+    bottom: auto;
 }
 
 .profile-picture {
@@ -133,13 +103,29 @@ export default {
     justify-content: center;
 }
 
+/* Desktop resolution media query. */
 @media screen and (min-width: 768px) {
+    .home {
+        min-height: 90vh;
+    }
+
     .title-container {
         flex-direction: row;
     }
+
     .cloud-border {
         height: 100px;
         width: 100%;
+    }
+
+    .profile-picture {
+        width: 250px;
+        height: 250px;
+    }
+
+    .title {
+        font-size: 1.2em;
+        min-height: 80px;
     }
 }
 </style>

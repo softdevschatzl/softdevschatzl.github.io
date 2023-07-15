@@ -1,6 +1,8 @@
 <template>
     <div class = "about">
-        <img src = "../assets/cloud_border.png" class = "cloud-border top" />
+        <div 
+            class = "cloud-border top"
+        ></div>
         <h1>{{ title }}</h1>
         <div class = "about-paras">
             <p>Hello! Welcome to my webpage where I can showcase my skills, 
@@ -25,7 +27,9 @@
                 also play piano.
             </p>
         </div>
-        <img src = "../assets/cloud_border.png" class = "cloud-border" />
+        <div 
+            class = "cloud-border"
+        ></div>
     </div>
 </template>
 
@@ -41,20 +45,20 @@ export default {
 };
 </script>
 
-<style scope>
+<style scoped>
+    /* This is where I implement the fade-in functionality for the cloud borders. */
     .cloud-border {
-        /* position: absolute; */
         bottom: 0;
         left: 0;
         width: 100%;
         z-index: 1;
-        object-fit: contain;
         height: auto;
+        background: url('../assets/cloud_border.png') repeat-x;
+        background-size: contain;
     }
     .cloud-border.top {
         transform: rotate(180deg);
         top: 0;
-        left: 0;
     }
 
     h1 {
