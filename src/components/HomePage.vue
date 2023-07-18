@@ -1,16 +1,10 @@
 <template>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <div class = "home">
-        <div 
-            class = "cloud-border top"
-        ></div>
-        <img :src="require('@/assets/profile.jpg')" alt = "Profile picture" class = "profile-picture" />
-        <h1>{{ name }}</h1>
+        <h1><span> {{ name }} </span></h1>
         <div class = "title-container">
-            <p class = "title" v-for = "(title, index) in titles" :key = "index">{{ title }}</p>
+            <p class = "title" v-for = "(title, index) in titles" :key = "index"><span> {{ title }} </span></p>
         </div>
-        <div 
-            class = "cloud-border"
-        ></div>
     </div>
 </template>
 
@@ -21,7 +15,6 @@ export default {
         return {
             name: 'John Schatzl',
             titles: [
-                'Student / Musician',
                 'Web / Application Developer',
                 'IT Technician',]
         };
@@ -30,7 +23,6 @@ export default {
 </script>
 
 <style scoped>
-/* This is where I implement the fade-in functionality for the cloud borders. */
 .home {
     position: relative;
     display: flex;
@@ -39,12 +31,13 @@ export default {
     flex-direction: column;
     text-align: center;
     height: 100%;
-    background-color: #009ccf;
+    background-color: #013c50;
     min-height: 700px;
     overflow: hidden;
+    margin-top: -50px;
 }
 
-.cloud-border {
+/* .cloud-border { Didn't want it, maybe will use it later.
     position: absolute;
     bottom: 0;
     left: 0;
@@ -58,25 +51,45 @@ export default {
     transform: rotate(180deg);
     top: 0;
     bottom: auto;
-}
-
-.profile-picture {
-    margin-bottom: 10px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid black;
-    z-index: 2;
-}
+} */
 
 .home h1 {
-    text-decoration: underline;
     margin-bottom: 50px;
-    font-size: 1.5em;
-    color: #000000;
+    font-size: 2em;
+    color: #ffffff;
     z-index: 2;
 }
+.home h1 span {
+    position: relative;
+    display: inline-block;
+    padding: .5em;
+}
+    .home h1 span::before, h1 span::after {
+        visibility: hidden;
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        transition: width 0.3s, height 0.3s ease-in-out;
+    }
+    .home h1 span::before {
+        top: 0;
+        left: 0;
+        border-top: 2px solid #ffffff;
+        border-left: 2px solid #ffffff;
+    }
+
+    .home h1 span::after {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid #ffffff;
+        border-right: 2px solid #ffffff;
+    }
+    .home h1 span:hover::before, .home h1 span:hover::after {
+        visibility: visible;
+        width: 100%;
+        height: 100%;
+    }
 
 .title-container {
     display: flex;
@@ -92,35 +105,50 @@ export default {
     margin: 0;
     color: #ffffff;
     font-size: 1em;
-    background-color: #53565a;
     padding: .7em;
-    border-radius: 20px;
-    border: 1px solid black;
-    width: 80%;
+    width: 100%;
     z-index: 2;
     min-height: 60px;
     align-items: center;
     justify-content: center;
+}
+.title span {
+    position: relative;
+    display: inline-block;
+    padding: .5em;
+}
+.title span::before, .title span::after {
+    visibility: hidden;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: width 0.3s, height 0.3s ease-in-out;
+}
+.title span::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+}
+
+.title span::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+.title span:hover::before, .title span:hover::after {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
 }
 
 /* Desktop resolution media query. */
 @media screen and (min-width: 768px) {
     .home {
         min-height: 90vh;
-    }
-
-    .title-container {
-        flex-direction: row;
-    }
-
-    .cloud-border {
-        height: 100px;
-        width: 100%;
-    }
-
-    .profile-picture {
-        width: 250px;
-        height: 250px;
+        background-color: #53565a;
     }
 
     .title {

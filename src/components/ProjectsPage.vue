@@ -1,16 +1,7 @@
 <template>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <div class = "projects">
-        <div 
-            v-if = "isTopVisible"
-            class = "cloud-border top"
-            v-observe-visibility = "topVisibilityChanged"
-        ></div>
         <h1>What I'm Working On</h1>
-        <div 
-            v-if = "isBottomVisible"
-            class = "cloud-border"
-            v-observe-visibility = "bottomVisibilityChanged"
-        ></div>
     </div>
 </template>
 
@@ -33,7 +24,7 @@ export default {
     background-color: #b4fdc0;
 }
 
-.cloud-border {
+/* .cloud-border { Didn't use this, might use it later.
     position: absolute;
     bottom: 0;
     left: 0;
@@ -47,6 +38,6 @@ export default {
     transform: rotate(180deg);
     top: 0;
     bottom: auto;
-}
+} */
 
 </style>
