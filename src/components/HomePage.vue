@@ -1,7 +1,15 @@
 <template>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <div class = "home">
+    <div class = "home double-color-background">
         <h1><span> {{ name }} </span></h1>
+        <div class = "socials">
+            <a class = "social" href = "https://github.com/theschatzinator" target = "_blank">
+                <img src = "../assets/github.svg">
+            </a>
+            <a class = "social" href = "https://www.linkedin.com/in/john-schatzl" target = "_blank">
+                <img src = "../assets/linkedin.svg">
+            </a>
+        </div>
         <div class = "title-container">
             <p class = "title" v-for = "(title, index) in titles" :key = "index"><span> {{ title }} </span></p>
         </div>
@@ -26,15 +34,25 @@ export default {
 .home {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     text-align: center;
     height: 100%;
-    background-color: #013c50;
     min-height: 700px;
     overflow: hidden;
     margin-top: -50px;
+}
+
+.socials {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.social {
+    width: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 /* .cloud-border { Didn't want it, maybe will use it later.
@@ -54,14 +72,19 @@ export default {
 } */
 
 .home h1 {
-    margin-bottom: 50px;
+    margin-top: 100px;
+    display: flex;
     font-size: 2em;
     color: #ffffff;
     z-index: 2;
+    justify-content: center;
 }
 .home h1 span {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: .5em;
 }
     .home h1 span::before, h1 span::after {
@@ -98,6 +121,11 @@ export default {
     align-items: center;
     gap: 20px;
     z-index: 2;
+    margin-bottom: 100px;
+}
+
+.home h1 .title {
+    width: auto;
 }
 
 .title {
@@ -144,6 +172,18 @@ export default {
     height: 100%;
 }
 
+.home h1 .title {
+    width: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .double-color-background {
+        height: 100%;
+
+        background: linear-gradient(to bottom right, #53565a 10%, #013c50 25%, #013c50 70%, #53565a 85%);
+    }
+}
+
 /* Desktop resolution media query. */
 @media screen and (min-width: 768px) {
     .home {
@@ -154,6 +194,7 @@ export default {
     .title {
         font-size: 1.2em;
         min-height: 80px;
+        width: auto;
     }
 }
 </style>

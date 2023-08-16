@@ -3,9 +3,9 @@
         <p class = "click-text">
             {{ title }} <span class = "arrow"></span>
         </p>
-        <ul>
-            <li v-for = "(item, index) in items" :key = "index">{{ item }}</li>
-        </ul>
+        <div class = "content" :class = "{ active: isActive }">
+          <p>{{ paragraph }}</p>
+        </div>
     </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
             type: String,
             required: true,
         },
-        items: {
+        paragraph: {
             type: String,
             required: true,
         },
@@ -36,11 +36,35 @@ export default {
 </script>
 
 <style lang = "scss" scoped>
+.content {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.4s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transform: translateY(-100%);
+  transition: transform 0.8s ease, opacity 2s ease, visibility 2s ease;
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+  }
+}
 .wrapper {
   margin: 40px auto;
   width: 400px;
   display: block;
   text-align: center;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 1px, black);
+  mask-image: linear-gradient(to bottom, transparent, black 1px, black);
   transition: 0.15s ease;
 
   &.active {
@@ -187,22 +211,13 @@ export default {
   }
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.4s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-li {
+p {
   list-style-type: none;
   margin: 0 auto;
   padding: 4px 12px;
   text-align: left;
   cursor: pointer;
+  color: white;
 
   &:first-child {
     margin-top: 12px;
@@ -210,6 +225,21 @@ li {
 
   &:last-child {
     margin-bottom: 12px;
+  }
+}
+
+// Mobile view
+@media only screen and (max-width: 767px) {
+  .wrapper {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .click-text {
+    width: 100%;
+  }
+  .content {
+    width: auto;
   }
 }
 

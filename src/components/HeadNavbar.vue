@@ -44,9 +44,14 @@ nav ul {
     align-items: center;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     justify-content: space-around;
+}
+
+nav ul li {
+    padding: 5px;
+    /* border-radius: 7px; */
 }
 
 nav ul li a {
@@ -59,10 +64,10 @@ nav ul li a::before {
     content: '';
     position: absolute;
     width: 0;
-    height: 1px;
+    height: 2px;
     bottom: 0;
     left: 0;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
@@ -76,20 +81,31 @@ nav a {
     text-decoration: none;
 }
 
+/* Mobile view. */
 @media screen and (max-width: 768px) {
     nav ul {
         display: none;
     }
 
     nav {
-        background-color: transparent;
+        background-color: #53565a;
         margin-bottom: -1px;
     }
 }
 
+/* Desktop view. */
 @media screen and (min-width: 768px) {
     nav {
         background-color: #53565a;
+    }
+
+    nav ul li {
+        width: auto;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        color: rgb(255, 255, 255);
     }
 
     .hamburger {

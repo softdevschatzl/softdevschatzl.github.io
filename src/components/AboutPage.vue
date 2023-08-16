@@ -1,29 +1,38 @@
 <template>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <div class = "about">
+    <div class = "about double-color-background">
         <h1>{{ title }}</h1>
         <img :src="require('@/assets/profile.jpg')" alt = "Profile picture" class = "profile-picture" />
-        <div class = "about-paras">
-            <p class = "professional-p">Hello! I am a student at Southern 
-                New Hampshire University studying Computer Science. I am also a
-                freelance web developer and application developer, and have been 
-                also working as an IT technician. For as long as I've known, I've 
-                always been fascinated by computers and how so much can be housed 
-                in such a relatively small device. Starting to program around the 
-                end of high school, it allowed me to get a look behind the curtain
-                and see how these machines work and I've fallen in love with it. 
-                I've been working on projects ever since and I'm always looking 
-                for new challenges and opportunities to learn and grow.
-            </p>
-            <p class = "personal-p">When I'm not getting work done, you can usually find me watching 
-                movies, playing video games and reading. I also enjoy snowboarding, 
-                occasionally making trips up to the mountains when the weather 
+        <p class = "header-p">I am a full-stack web developer and application developer. 
+            I enjoy to create immersive user interfaces as well as 
+            bulletproof, reliable back-end services.
+        </p>
+        <h2>{{ title2 }}</h2>
+        <div class = "dialogue-menu">
+            <DialogueMenu 
+                title = "More Professional"
+                paragraph = "   I am a student at Southern 
+                    New Hampshire University studying Computer Science. I am also a
+                    freelance web developer and application developer, and have been
+                    also working as an IT technician. For as long as I've known, I've
+                    always been fascinated by computers and how so much can be housed
+                    in such a relatively small device. Starting to program around the
+                    end of high school, it allowed me to get a look behind the curtain
+                    and see how these machines work and I've fallen in love with it.
+                    I've been working on projects ever since and I'm always looking
+                    for new challenges and opportunities to learn and grow."
+            />
+            <DialogueMenu 
+                title = "More Personal"
+                paragraph = "   When I'm not getting work done, you can usually find me watching
+                movies, playing video games and reading. I also enjoy snowboarding,
+                occasionally making trips up to the mountains when the weather
                 calls for it, and fishing when it doesn't. I also enjoy traveling,
-                having just gotten my passport last year, I am always looking to 
-                add some miles and stamps to it. I also enjoy both listening to and 
-                playing music, playing guitar since I was young and looking to 
-                also play piano.
-            </p>
+                having just gotten my passport last year, I am always looking to
+                add some miles and stamps to it. I also enjoy both listening to and
+                playing music, playing guitar since I was young and looking to
+                also play piano."
+            />
         </div>
     </div>
 </template>
@@ -40,6 +49,7 @@ export default {
         return {
             name: 'John Schatzl',
             title: 'About Me',
+            title2: 'More About Me',
         };
     },
 };
@@ -69,13 +79,19 @@ export default {
         padding: 10px;
     }
 
+    h2 {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        padding: 10px;
+        color: #000000;
+    }
+
     .about {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         text-align: center;
-        height: 100%;
         background-color: #53565a;
     }
 
@@ -107,13 +123,52 @@ export default {
         border-radius: 10px;
     }
 
+    .header-p {
+        width: 90%;
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    /* Mobile view. */
+    @media screen and (max-width: 767px) {
+        .double-color-background {
+            height: 100%;
+
+            background: linear-gradient(to bottom right, #013c50 20%, #53565a 35%, #53565a 75%, #013c50 90%);
+        }
+
+        .dialogue-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+
+    /* Desktop view. */
     @media only screen and (min-width: 768px) {
+        .double-color-background {
+            height: 100%;
+
+            background: linear-gradient(to bottom right, #53565a 15%, #013c50 25%, #013c50 75%, #b4fdc0 90%);
+        }
+
         h1 {
+            color: white;
+        }
+
+        h2 {
             color: white;
         }
 
         .about {
             background-color: #013c50;
+            min-height: 100vh;
         }
 
         .about-paras {
@@ -128,6 +183,14 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .header-p {
+            font-size: 1.1em;
+        }
+
+        .dialogue-menu {
+            width: auto;
         }
     }
 

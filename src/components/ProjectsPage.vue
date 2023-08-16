@@ -1,6 +1,6 @@
 <template>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <div class = "projects">
+    <div class = "projects double-color-background">
         <h1>What I'm Working On</h1>
     </div>
 </template>
@@ -22,22 +22,20 @@ export default {
     text-align: center;
     height: 100%;
     background-color: #b4fdc0;
+    min-height: 700px;
 }
 
-/* .cloud-border { Didn't use this, might use it later.
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    height: auto;
-    background: url('../assets/cloud_border.png') repeat-x;
-    background-size: contain;
+.projects h1 {
+    padding: 30px;
+    font-size: 2em;
+    color: #000000;
 }
-.cloud-border.top {
-    transform: rotate(180deg);
-    top: 0;
-    bottom: auto;
-} */
 
+@media only screen and (min-width: 768px) {
+    .double-color-background {
+            height: 100%;
+
+            background: linear-gradient(to bottom right, #013c50 25%, #b4fdc0 40%, #b4fdc0 75%, #b4fdc0 90%);
+        }
+}
 </style>

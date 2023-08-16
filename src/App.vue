@@ -40,20 +40,35 @@ export default {
 };
 </script>
 
+<!-- Essentially my global style sheet. -->
 <style>
 #app {
   display: flex;
   flex-direction: column;
   font-family: 'Nova Flat', cursive;
   background-color: #013c50;
-  height: 100vh;
+  height: 100%;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100%;
 } 
+
+.home-page {
+  margin-top: 100px;
+}
+
+.head-navbar.top {
+  background-color: #53565a;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+}
 
 .head-navbar.bottom {
   display: none;
@@ -76,19 +91,42 @@ export default {
     display: none;
   }
   .head-navbar.bottom {
-    display: block;
+    display: flex;
     height: 70%;
+    text-align: center;
+    width: auto;
   }
 
   .header-home {
     position: sticky;
+    left: 0;
     top: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    width: 30vw;
   }
+  /* .header-home::before,
+  .header-home::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
+  .header-home::before {
+    top: 0;
+    background: linear-gradient(to bottom, #013c50, transparent);
+  }
+  .header-home::after {
+    bottom: 0;
+    background: linear-gradient(to top, #013c50, transparent);
+  } */
 
+  .about-page {
+    min-height: 80vh;
+  }
 }
 
 </style>

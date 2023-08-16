@@ -38,14 +38,13 @@ export default {
 	nav {
 		width: auto;
 		// height: calc(100% - #{$headerHeight} - #{$footerHeight}); 
-		background: #013c50;
+		background: #53565a;
 		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: 99;
 		// box-shadow: 2px 0 3px$grey-6; 
 		// overflow-y: scroll; 
-        border-radius: 10%;
 	}
 
 	.sidemenu {
@@ -72,7 +71,7 @@ export default {
 				bottom: 0;
 				left: 0;
 				right: 0;
-				transition: all .4s ease;
+				transition: all .8s ease;
 
 				&.top {
 					transform: translateY(-8px);
@@ -128,11 +127,11 @@ export default {
 }
 
 .translateX-enter-active {
-    transition: all .2s ease;
+    transition: all .4s ease;
 }
 
 .translateX-leave-active {
-    transition: all .2s ease;
+    transition: all .4s ease;
 }
 
 .translateX-enter-from,
