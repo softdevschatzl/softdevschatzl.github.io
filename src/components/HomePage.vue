@@ -87,6 +87,9 @@ export default {
     text-align: center;
     padding: .5em;
 }
+
+/** TODO: Add border animations for socials. */
+
     .home h1 span::before, h1 span::after {
         visibility: hidden;
         content: '';
