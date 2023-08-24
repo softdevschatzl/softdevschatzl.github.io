@@ -1,7 +1,5 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import VueObserveVisibilityPlugin from 'vue-observe-visibility'
+import { createApp } from 'vue';
+import App from './App.vue';
 
-
-const app = createApp(App).mount('#app')
-app.use(VueObserveVisibilityPlugin)
+const app = createApp(App);
+app.mount('#app');

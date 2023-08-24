@@ -19,6 +19,12 @@
       <div class = "projects-page">
         <ProjectsPage />
       </div>
+      <div class = "service-page">
+        <ServicePage />
+      </div>
+      <div class = "contact-page">
+        <ContactPage />
+      </div>
     </div>
   </div>
 </template>
@@ -28,6 +34,8 @@ import HeadNavbar from './components/HeadNavbar.vue';
 import HomePage from './components/HomePage.vue';
 import AboutPage from './components/AboutPage.vue';
 import ProjectsPage from './components/ProjectsPage.vue';
+import ServicePage from './components/ServicePage.vue';
+import ContactPage from './components/ContactPage.vue';
 
 export default {
   name: 'App',
@@ -36,6 +44,8 @@ export default {
     HomePage,
     AboutPage,
     ProjectsPage,
+    ServicePage,
+    ContactPage,
   },
 };
 </script>
@@ -73,6 +83,10 @@ export default {
 .head-navbar.bottom {
   display: none;
   background-color: #53565a;
+}
+
+.project-page {
+  min-height: 70vh;
 }
 
 /* Desktop resolutions */

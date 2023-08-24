@@ -60,7 +60,7 @@ export default {
 }
 .wrapper {
   margin: 40px auto;
-  width: 400px;
+  width: 40vw;
   display: block;
   text-align: center;
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 1px, black);
@@ -167,7 +167,7 @@ export default {
 .arrow {
   width: 13px;
   height: 13px;
-  display: inline-block;
+  // display: inline-block;
   position: relative;
   bottom: -5px;
   left: -10px;

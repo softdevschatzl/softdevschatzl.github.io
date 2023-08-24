@@ -3,8 +3,8 @@
     <div class = "about double-color-background">
         <h1>{{ title }}</h1>
         <img :src="require('@/assets/profile.jpg')" alt = "Profile picture" class = "profile-picture" />
-        <p class = "header-p">I am a full-stack web developer and application developer. 
-            I enjoy to create immersive user interfaces as well as 
+        <p class = "header-p">I am a full-stack web and application developer.
+            I enjoy creating immersive user interfaces as well as
             bulletproof, reliable back-end services.
         </p>
         <h2>{{ title2 }}</h2>
@@ -93,6 +93,7 @@ export default {
         align-items: center;
         text-align: center;
         background-color: #53565a;
+        min-height: 100ch;
     }
 
     .profile-picture {
@@ -155,7 +156,7 @@ export default {
         .double-color-background {
             height: 100%;
 
-            background: linear-gradient(to bottom right, #53565a 15%, #013c50 25%, #013c50 75%, #b4fdc0 90%);
+            background: linear-gradient(to bottom right, #53565a 15%, #013c50 25%, #013c50 75%, #4f8157 90%);
         }
 
         h1 {

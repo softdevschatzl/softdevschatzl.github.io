@@ -4,10 +4,10 @@
         <h1><span> {{ name }} </span></h1>
         <div class = "socials">
             <a class = "social" href = "https://github.com/theschatzinator" target = "_blank">
-                <img src = "../assets/github.svg">
+                <span><img src = "../assets/github.svg"></span>
             </a>
             <a class = "social" href = "https://www.linkedin.com/in/john-schatzl" target = "_blank">
-                <img src = "../assets/linkedin.svg">
+                <span><img src = "../assets/linkedin.svg"></span>
             </a>
         </div>
         <div class = "title-container">
@@ -50,9 +50,10 @@ export default {
     justify-content: center;
 }
 .social {
-    width: 50px;
+    width: 60px;
     margin-right: 20px;
     margin-left: 20px;
+    transition: 0.3s ease-in-out;
 }
 
 /* .cloud-border { Didn't want it, maybe will use it later.
@@ -89,6 +90,43 @@ export default {
 }
 
 /** TODO: Add border animations for socials. */
+/* Until I'm not lazy. */
+.social:hover {
+    transform: scale(1.1);
+}
+/* .social span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5em;
+}
+.social span::before, .social span::after {
+    visibility: hidden;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: width 0.3s, height 0.3s, ease-in-out;
+}
+.social span::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+}
+.social span::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+.social span:hover::before, .social span:hover::after {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+} */
 
     .home h1 span::before, h1 span::after {
         visibility: hidden;
