@@ -157,14 +157,10 @@ export default {
         transition: opacity 0.2s ease;
     }
     .download-image:hover {
-        opacity: 0.7;
+        opacity: 0.6;
     }
 
     .double-color-background {
         background: linear-gradient(to bottom right, #53565a 20%, #013c50 35%, #013c50 70%, #013c50 85%);
-    }
-
-    .gif-container img {
-        transition: opacity 0.3s ease;
     }
 </style>

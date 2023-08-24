@@ -102,7 +102,7 @@ data() {
         margin-bottom: 30px;
     }
     .double-color-background {
-        background: linear-gradient(to bottom right, #013c50 10%, #53565a 25%, #53565a 70%, #53565a 85%);
+        background: linear-gradient(to bottom right, #013c50 10%, #53565a 25%, #53565a 70%, #013c50 85%);
     }
 
     .service-item {

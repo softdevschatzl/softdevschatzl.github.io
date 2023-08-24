@@ -4,16 +4,24 @@
 -->
 <template>
 <div id="slider">
-  <transition tag="div" :name="transitionName" class="slides-group">
-    <div v-if="show" :key="current" class="slide" :class="slides[current].className">
+  <transition 
+    tag="div" 
+    :name="transitionName" 
+    class="slides-group">
+    <div v-if="show" 
+      :key="current" 
+      class="slide" 
+      :class="slides[current].className">
       <h2>{{ slides[current].title }}</h2>
       <p>{{ slides[current].description }}</p>
       <div class = 'projectimages'>
-        <div v-for="(image, index) in slides[current].images" :key="index" :class = "['image-wrapper', 'slide-' + current + '-image-' + index]">
-          <a :href="slides[current].imageLinks[index]" target="_blank" rel="noopener noreferrer">
+        <div v-for="(image, index) in slides[current].images" :key="index" :class = "['image-wrapper']">
+          <a 
+            :href="slides[current].imageLinks[index]" 
+            target="_blank" 
+            rel="noopener noreferrer">
             <img 
               class="projectimage" 
-              :class = "{'livesite-image': image === livesite}"
               :src="image" 
               alt="Slide Image">
           </a>
@@ -169,15 +177,10 @@ export default {
   flex-direction: row;
 }
 .projectimage {
-  width: 100%;
   transition: transform 0.3s ease-in-out;
 }
 .projectimage:hover {
   transform: scale(1.1);
-}
-
-.livesite-image {
-  width: 40%;
 }
 
 /* SLIDER STYLES */
@@ -307,8 +310,8 @@ body {
 /* Desktop view. */
 @media only screen and (min-width: 768px ) {
   .slide {
-      gap: 15px;
-      height: 35vh;
+    gap: 15px;
+    height: 35vh;
   }
   #slider {
     height: 35vh;
@@ -316,6 +319,7 @@ body {
   }
   .projectimage {
     height: 70px;
+    width: auto;
   }
 
   .btn {
@@ -337,6 +341,11 @@ body {
 
   .btn {
     top: calc(50% - 40px)
+  }
+
+  .projectimage {
+    height: 7vh;
+    width: auto;
   }
 }
 </style>
