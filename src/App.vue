@@ -1,17 +1,3 @@
-<!-- 
-  TODO:
-
-- Scrolling through the menu options is funky on mobile, doesn't really line
-up with the section.
-
-- Fix mobile animations for the AboutPage section.
-
-- Add backend API Gmail support for the message function in ContactPage.
-
-- Get a professional headshot.
-
- -->
-
 <template>
   <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
   <div id = "app">

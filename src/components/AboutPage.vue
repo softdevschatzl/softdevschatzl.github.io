@@ -63,27 +63,25 @@ export default {
             name: 'John Schatzl',
             title: 'About Me',
             title2: 'More About Me',
+            isMobile: false,
         };
     },
+    mounted() {
+        this.isMobile = window.innerWidth <= 767;
+        window.addEventListener('resize', this.checkIfMobile);
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.checkIfMobile);
+    },
+    methods: {
+        checkIfMobile() {
+            this.isMobile = window.innerWidth <= 767;
+        }
+    }
 };
 </script>
 
 <style scoped>
-    /* This is where I implement the fade-in functionality for the cloud borders. */
-    /* .cloud-border { Didn't use this, might use it later.
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-        height: auto;
-        background: url('../assets/cloud_border.png') repeat-x;
-        background-size: contain;
-    }
-    .cloud-border.top {
-        transform: rotate(180deg);
-        top: 0;
-    } */
-
     h1 {
         margin-bottom: 25px;
         margin-top: 25px;
