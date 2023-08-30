@@ -72,7 +72,7 @@ export default {
           title: "React Website",
           description: "A website I made for a local music producer to showcase skills with React and general front-end development.",
           images: [livesite, githubdark],
-          imageLinks: ["https://github.com/theschatzinator/WTFIBWebsite", "https://theschatzinator.github.io/WTFIBWebsite/"]
+          imageLinks: ["https://theschatzinator.github.io/WTFIBWebsite/", "https://github.com/theschatzinator/WTFIBWebsite"]
         },
         // { className: "yellow" },
         // { className: "gray" },
@@ -193,6 +193,9 @@ body {
 }
 
 #slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -330,7 +333,7 @@ body {
 /* Mobile view. */
 @media only screen and (max-width: 767px) {
   #slider {
-    width: 100%;
+    width: 90%;
     height: 40vh;
   }
   .slide {

@@ -5,12 +5,11 @@
             <div class = "hamburger">
                 <HamBurger />
             </div>
-            <ul>
-                <li><a href = "#">Top</a></li>
-                <li><a href = "#">About</a></li>
-                <li><a href = "#">Projects</a></li>
-                <li><a href = '#'>Services</a></li>
-                <li><a href = "#">Contact</a></li>
+            <ul class = "slide-in-left-5">
+                <li><a href = "#about">About</a></li>
+                <li><a href = "#projects">Projects</a></li>
+                <li><a href = '#services'>Services</a></li>
+                <li><a href = "#contact">Contact</a></li>
             </ul>
         </nav>
     </div>

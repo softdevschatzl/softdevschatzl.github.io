@@ -1,3 +1,17 @@
+<!-- 
+  TODO:
+
+- Scrolling through the menu options is funky on mobile, doesn't really line
+up with the section.
+
+- Fix mobile animations for the AboutPage section.
+
+- Add backend API Gmail support for the message function in ContactPage.
+
+- Get a professional headshot.
+
+ -->
+
 <template>
   <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
   <div id = "app">
@@ -5,7 +19,7 @@
       <div class = "head-navbar top">
         <HeadNavbar />
       </div>
-      <div class = "home-page">
+      <div class = "home-page" id = "top">
         <HomePage />
       </div>
       <div class = "head-navbar bottom">
@@ -13,16 +27,16 @@
       </div>
     </div>
     <div class = "body">
-      <div class = "about-page">
+      <div class = "about-page" id = "about">
         <AboutPage />
       </div>
-      <div class = "projects-page">
+      <div class = "projects-page" id = "projects">
         <ProjectsPage />
       </div>
-      <div class = "service-page">
+      <div class = "service-page" id = "services">
         <ServicePage />
       </div>
-      <div class = "contact-page">
+      <div class = "contact-page" id = "contact">
         <ContactPage />
       </div>
     </div>
@@ -47,11 +61,41 @@ export default {
     ServicePage,
     ContactPage,
   },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll();
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    // Essentially handling animations when an element is in the given viewport.
+    handleScroll() {
+      const elements = document.querySelectorAll("[data-v-scroll]");
+
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const isInViewport = 
+          rect.top + rect.height * 0.7 <= window.innerHeight &&
+          rect.bottom - rect.height * 0.7 >= 0;
+
+        const animation = el.getAttribute("data-v-scroll");
+
+        if (isInViewport && animation) {
+          el.computedStyleMap.opacity = '1'; // Make the element visible.
+          el.classList.add(animation); // Apply the given animation.
+        }
+      })
+    }
+  }
 };
 </script>
 
 <!-- Essentially my global style sheet. -->
 <style>
+html {
+  scroll-behavior: smooth;
+}
 #app {
   display: flex;
   flex-direction: column;
@@ -143,4 +187,90 @@ export default {
   }
 }
 
+/* ANIMATIONS */
+
+/* Fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in from left */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-in from right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-in from top */
+@keyframes slideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-in from bottom */
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* CLASSES FOR ANIMATIONS */
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+.slide-in-left {
+  animation: slideInLeft 1.8s forwards;
+}
+.slide-in-left-7 {
+  animation: slideInLeft 1.5s forwards;
+}
+.slide-in-left-5 {
+  animation: slideInLeft 1s forwards;
+}
+.slide-in-right {
+  animation: slideInRight 1s forwards;
+}
+.slide-in-top {
+  animation: slideInTop 1s forwards;
+}
+.slide-in-bottom {
+  animation: slideInBottom 1s forwards;
+}
+
+[data-v-scroll] {
+  opacity: 0;
+}
 </style>

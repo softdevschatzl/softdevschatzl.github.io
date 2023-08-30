@@ -1,8 +1,8 @@
 <template>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <div class = "projects double-color-background">
-        <h1>What I'm Working On</h1>
-        <div class = "carousel">
+        <h1 data-v-scroll="fade-in">What I'm Working On</h1>
+        <div class = "carousel" data-v-scroll = "slide-in-bottom">
             <ProjectCarousel />
         </div>
     </div>
@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style scoped>
+* {
+    box-sizing: border-box;
+}
+
 .projects {
     display: flex;
     justify-content: center;
@@ -47,6 +51,12 @@ export default {
 @media only screen and (max-width: 767px) {
     .double-color-background {
         background: linear-gradient(to bottom right, #53565a 25%, #013c50 40%, #013c50 60%, #53565a 75%);
+    }
+    
+    .carousel {
+        width: 90%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -72,6 +82,9 @@ export default {
     .carousel {
         height: 50vh;
         width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 </style>

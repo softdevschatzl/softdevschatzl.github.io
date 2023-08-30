@@ -1,14 +1,14 @@
 <template>
     <div class="contact-section double-color-background">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out or connect with me on social media.</p>
+        <h2 data-v-scroll = "fade-in">Contact Me</h2>
+        <p data-v-scroll="fade-in">Feel free to reach out or connect with me on social media.</p>
 
-        <div class="socials">
+        <div class="socials" data-v-scroll="fade-in">
             <a v-for="social in socialMediaLinks" :key="social.name" :href="social.url" target="_blank" rel="noopener noreferrer">
                 <img :src="social.icon" :alt="`Connect on ${social.name}`" />
             </a>
         </div>
-        <div class="contact-form">
+        <div class="contact-form" data-v-scroll="fade-in">
             <h3>Send me a message!</h3>
             <form @submit.prevent="sendMessage">
                 <div class = "name-box">
@@ -25,7 +25,7 @@
             </form>
         </div>
         <!-- TODO: Make the download.png image work please. -->
-        <div class="resume-download"> 
+        <div class="resume-download" data-v-scroll="fade-in"> 
             <p>Interested in my work? Download my resume:</p>
             <a :href = resumeLink target = "_blank">
                 <img :src = "downloadIcon" class = "download-image" />
@@ -47,7 +47,7 @@ export default {
                 name: '',
                 message: ''
             },
-            resumeLink: 'https://drive.google.com/file/d/18R1kuZ36fYnWw5C79qOK7ptkOtZxMj8E/view?usp=drive_link',
+            resumeLink: 'http://bit.ly/3OWlMmK',
             socialMediaLinks: [
                 {
                     name: 'LinkedIn',
@@ -61,7 +61,7 @@ export default {
                 },
                 {
                     name: 'Twitter',
-                    url: 'https://twitter.com/your_username',
+                    url: 'https://twitter.com/softdevschatz',
                     icon: twittericon
                 }
             ],
@@ -69,15 +69,31 @@ export default {
         };
     },
     methods: {
-        sendMessage() {
-            // TODO: Make an API call to Gmail to receive the message as mail.
-            alert(`Message from ${this.contact.name}: ${this.contact.message}`);
-            
-            // Reset the form
-            this.contact.name = '';
-            this.contact.message = '';
+        async sendMessage() {
+            try {
+                const response = await fetch("https://formspree.io/f/mpzgrzdj", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(this.contact),
+                });
+
+                if (response.ok) {
+                    // Message sent successfully.
+                    window.alert("Message sent successfully!");
+                    // Reset the form.
+                    this.contact.name = '';
+                    this.contact.message = '';
+                } else {
+                    // Failed to send message.
+                    console.error("Failed to send message.");
+                }
+            } catch (error) {
+                console.error("An error occurred while sending the message:", error);
+            }            
         }
-    }
+    },
 };
 </script>
 
@@ -148,7 +164,14 @@ export default {
         padding: 5px;
     }
     .send-button {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
         width: 10vw;
+        height: 3vh;
+        padding: 5px;
+        border-radius: 10%;
     }
 
     .download-image {

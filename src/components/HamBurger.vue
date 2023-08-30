@@ -10,11 +10,11 @@
       <nav v-if="navOpen">
         <div class="sidemenu__wrapper">
           <ul class="sidemenu__list">
-            <li class="sidemenu__item"><a href="">Top</a></li>
-            <li class="sidemenu__item"><a href="">About</a></li>
-            <li class="sidemenu__item"><a href="">Projects</a></li>
-            <!-- <li class="sidemenu__item"><a href="">Work</a></li> Not applicable yet :) -->
-            <li class="sidemenu__item"><a href="">Contact</a></li>
+            <li class="sidemenu__item"><a href="#top" @click="navigateAndClose">Top</a></li>
+            <li class="sidemenu__item"><a href="#about" @click="navigateAndClose">About</a></li>
+            <li class="sidemenu__item"><a href="#projects" @click="navigateAndClose">Projects</a></li>
+            <li class="sidemenu__item"><a href="#services" @click="navigateAndClose">Services</a></li>
+            <li class="sidemenu__item"><a href="#contact" @click="navigateAndClose">Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -30,6 +30,11 @@ export default {
       navOpen: false,
     };
   },
+  methods: {
+	navigateAndClose() {
+		this.navOpen = false;
+	}
+  }
 };
 </script>
 
@@ -97,7 +102,7 @@ export default {
 		}
 
 		&__wrapper {
-      padding-top: 50px;
+      padding-top: 75px;
     }
 
 		&__list {

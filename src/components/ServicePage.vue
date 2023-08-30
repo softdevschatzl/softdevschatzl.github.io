@@ -1,10 +1,14 @@
 <template>
     <div class="services-section double-color-background">
-        <h2>My Services</h2>
-        <p class = "section-p">Discover a range of services tailored to elevate your business and personal presence online and on mobile devices, all created from scratch for the most versatility and personalization.</p>
+        <h2 data-v-scroll="fade-in">My Services</h2>
+        <p class = "section-p" data-v-scroll="fade-in">Discover a range of services tailored to elevate your business and personal presence online and on mobile devices, all created from scratch for the most versatility and personalization.</p>
     
         <div class="services-list">
-            <div class="service-item" v-for="service in services" :key="service.id">
+            <div 
+                class="service-item" 
+                v-for="(service, index) in services" 
+                :key="service.id" 
+                :data-v-scroll = "getAnimationClass(index)">
                 <div class="service-icon">
                     <img :src="service.icon" :alt="service.title" />
                 </div>
@@ -24,30 +28,36 @@ import applicationicon1 from '../assets/application-icon1.svg';
 import maintenanceicon from '../assets/maintenance-icon.png';
 
 export default {
-data() {
-    return {
-        services: [
-            {
-            id: 1,
-            title: 'Web Development',
-            description: 'Modern, responsive, and tailored websites to showcase your business or personal brand.',
-            icon: webicon
-            },
-            {
-            id: 2,
-            title: 'Application Development',
-            description: 'Custom applications built for both mobile and desktop to meet your specific needs.',
-            icon: [applicationicon1]
-            },
-            {
-            id: 3,
-            title: 'Maintenance & Support',
-            description: 'Ongoing support and updates for your web or application projects and general tech needs.',
-            icon: maintenanceicon
-            }
-        ]
-    };
-}
+    data() {
+        return {
+            services: [
+                {
+                id: 1,
+                title: 'Web Development',
+                description: 'Modern, responsive, and tailored websites to showcase your business or personal brand.',
+                icon: webicon
+                },
+                {
+                id: 2,
+                title: 'Application Development',
+                description: 'Custom applications built for both mobile and desktop to meet your specific needs.',
+                icon: [applicationicon1]
+                },
+                {
+                id: 3,
+                title: 'Maintenance & Support',
+                description: 'Ongoing support and updates for your web or application projects and general tech needs.',
+                icon: maintenanceicon
+                }
+            ]
+        };
+    },
+    methods: {
+        getAnimationClass(index) {
+            const animationClasses = ['slide-in-left', 'slide-in-left-7', 'slide-in-left-5'];
+            return animationClasses[index % animationClasses.length];
+        }
+    }
 };
 </script>
 
@@ -57,6 +67,7 @@ data() {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     padding: 50px;
     text-align: center;
     background-color: #53565a;
