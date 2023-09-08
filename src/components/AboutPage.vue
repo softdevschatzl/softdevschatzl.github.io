@@ -1,11 +1,11 @@
 <template>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <div class = "about double-color-background">
-        <div class = "fade-in" :data-v-scroll="isMobile ? 'fade-in' : ''">
+        <div class = "fade-in">
             <h1>{{ title }}</h1>
             <div class="container">
-                <img :src="require('@/assets/profile.jpg')" alt = "Profile picture" class = "profile-picture" />
-                <!-- <img :src="require('@/assets/snowboard.png')" alt = "Profile picture" class = "profile-picture" /> -->
+                <img :src="require('@/assets/profile.png')" alt = "Profile picture" class = "profile-picture front-image" />
+                <img :src="require('@/assets/snowboard.png')" alt = "Profile picture" class = "profile-picture back-image" />
             </div>
             <p class = "header-p">I am a full-stack web and application developer.
                 I enjoy creating immersive user interfaces as well as
@@ -16,7 +16,7 @@
         <div class = "dialogue-menu fade-in">
             <DialogueMenu 
                 title = "More Professional"
-                paragraph = "   I am a student at Southern 
+                paragraph = "I am a student at Southern 
                     New Hampshire University studying Computer Science. I am also a
                     freelance web developer and application developer, and have been
                     also working as an IT technician. Starting to program around the
@@ -25,14 +25,14 @@
                     my work come to life with these tools has sparked a passion in me
                     to develop my skills and see what kinds of things I can make.
                     I have a plethora of experience working efficiently in teams 
-                    to produce substantial progress and have no trouble working
+                    to produce substantial progress, and have no trouble working
                     with peers and clients alike. I am a great addition
                     to any environment, and look forward to seeing the impact
                     I have in this field."
             />
             <DialogueMenu 
                 title = "More Personal"
-                paragraph = "   When I'm not getting work done, you can usually find me watching
+                paragraph = "When I'm not getting work done, you can usually find me watching
                     movies, playing video games and reading. I also enjoy snowboarding,
                     occasionally making trips up to the mountains when the weather
                     calls for it, and fishing when it doesn't. I also enjoy traveling,
@@ -63,21 +63,8 @@ export default {
             name: 'John Schatzl',
             title: 'About Me',
             title2: 'More About Me',
-            isMobile: false,
         };
     },
-    mounted() {
-        this.isMobile = window.innerWidth <= 767;
-        window.addEventListener('resize', this.checkIfMobile);
-    },
-    beforeUnmount() {
-        window.removeEventListener('resize', this.checkIfMobile);
-    },
-    methods: {
-        checkIfMobile() {
-            this.isMobile = window.innerWidth <= 767;
-        }
-    }
 };
 </script>
 
@@ -86,7 +73,7 @@ export default {
         margin-bottom: 25px;
         margin-top: 25px;
         font-size: 1.5em;
-        color: #000000;
+        color: #ffffff;
         padding: 10px;
     }
 
@@ -94,7 +81,7 @@ export default {
         margin-bottom: 10px;
         font-size: 1.5em;
         padding: 10px;
-        color: #000000;
+        color: #ffffff;
     }
 
     .about {
@@ -108,13 +95,49 @@ export default {
     }
 
     .profile-picture {
+        position: absolute;
+        top: 0;
+        left: 0;
         margin-bottom: 10px;
         width: 150px;
         height: 150px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid black;
-        z-index: 2;
+        border: 2px solid rgb(255, 255, 255);
+    }
+
+    .fade-in {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        perspective: 1000px;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1.5s ease-in-out;
+    }
+    .container:hover {
+        transform: rotateY(180deg);
+    }
+    .front-image {
+        transform: rotateY(0deg);
+        backface-visibility: hidden;
+    }
+    .back-image {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
     }
 
     .header-p {
@@ -133,7 +156,7 @@ export default {
         .double-color-background {
             height: 100%;
 
-            background: linear-gradient(to bottom right, #013c50 20%, #53565a 35%, #53565a 75%, #013c50 90%);
+            background: linear-gradient(to bottom right, #013c50 20%, #53565a 35%, #53565a 75%, #497285 90%);
         }
 
         .dialogue-menu {
@@ -150,7 +173,7 @@ export default {
         .double-color-background {
             height: 100%;
 
-            background: linear-gradient(to bottom right, #53565a 15%, #013c50 25%, #013c50 75%, #4f8157 90%);
+            background: linear-gradient(to bottom right, #53565a 15%, #013c50 25%, #013c50 75%, #497285 90%);
         }
 
         h1 {
@@ -188,19 +211,4 @@ export default {
             width: auto;
         }
     }
-
-    /* 3D Flip Animation */
-    /* .container img:nth-of-type(1){
-        transform: perspective(2000px) rotateY(0deg);   
-    }
-    .container img:nth-of-type(2){
-        transform: perspective(1000px) rotateY(-180deg);
-    }
-    .container:hover img:nth-of-type(1){
-        transform: perspective(1000px) rotateY(180deg);   
-    }
-    .container:hover img:nth-of-type(2){
-        transform: perspective(1000px) rotateY(0deg);
-    } */
-
 </style>

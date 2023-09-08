@@ -46,7 +46,7 @@ export default {
                 {
                 id: 3,
                 title: 'Maintenance & Support',
-                description: 'Ongoing support and updates for your web or application projects and general tech needs.',
+                description: 'Ongoing support and updates for your web or application projects as well as many general tech needs.',
                 icon: maintenanceicon
                 }
             ]
@@ -101,7 +101,7 @@ export default {
 }
 
 .double-color-background {
-    background: linear-gradient(to bottom right, #4f8157 10%, #53565a 25%, #53565a 70%, #013c50 85%);
+    background: linear-gradient(to bottom right, #497285 10%, #53565a 25%, #53565a 70%, #013c50 85%);
 }
 
 /* Mobile view */
@@ -113,7 +113,7 @@ export default {
         margin-bottom: 30px;
     }
     .double-color-background {
-        background: linear-gradient(to bottom right, #013c50 10%, #53565a 25%, #53565a 70%, #013c50 85%);
+        background: linear-gradient(to bottom right, #497285 10%, #53565a 25%, #53565a 70%, #013c50 85%);
     }
 
     .service-item {

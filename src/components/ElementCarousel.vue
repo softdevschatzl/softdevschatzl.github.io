@@ -63,7 +63,7 @@ export default {
         { 
           className: "slide1",
           title: "JumpCut",
-          description: "A Chrome extension that highlights Google search snippet text and allows the user to click the snippet text and opens a new tab with that corresponding URL and scrolls you down to the exact text that was in the snippet.",
+          description: "A Chrome extension that makes Google search querying an experience you never knew you needed.",
           images: [chromewebstore, githubdark],
           imageLinks: ["https://chrome.google.com/webstore/detail/jumpcut/fdipgkkflkdlimaeojpkpkhbemlikkbm", "https://github.com/theschatzinator/JumpCut"]
         },

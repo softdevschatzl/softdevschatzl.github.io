@@ -13,7 +13,7 @@
             <form @submit.prevent="sendMessage">
                 <div class = "name-box">
                     <label for="name">Name:</label>
-                    <input v-model="contact.name" id="name" type="text" required />
+                    <input class = "name" v-model="contact.name" id="name" type="text" required />
                 </div>
                 
                 <div class = "message-box">
@@ -153,7 +153,10 @@ export default {
     }
     .name-box input {
         height: 30px;
-        padding: 5px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #dddddd;
+        font-family: Arial, Helvetica, sans-serif;
     }
     .message-box {
         margin-top: 20px;
@@ -161,7 +164,10 @@ export default {
     }
     .message-box textarea {
         height: 100px;
-        padding: 5px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #dddddd;
+        font-family: Arial, Helvetica, sans-serif;
     }
     .send-button {
         display: flex;
@@ -171,19 +177,40 @@ export default {
         width: 10vw;
         height: 3vh;
         padding: 5px;
-        border-radius: 10%;
+        border-radius: 20px;
+        background-color: #dddddd;
+        transition: opacity 0.3s ease-in-out;
+        color: black;
+    }
+    .send-button:hover {
+        opacity: 0.7;
     }
 
     .download-image {
         width: 50px;
         margin-top: 20px;
         transition: opacity 0.2s ease;
+        animation-name: shake;
+        animation-duration: 3.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+        animation-delay: 3s;
     }
     .download-image:hover {
         opacity: 0.6;
+        animation: none;
     }
 
     .double-color-background {
         background: linear-gradient(to bottom right, #53565a 20%, #013c50 35%, #013c50 70%, #013c50 85%);
+    }
+
+    @media only screen and (max-width: 768px) {
+        .send-button {
+            width: 80px;
+        }
     }
 </style>

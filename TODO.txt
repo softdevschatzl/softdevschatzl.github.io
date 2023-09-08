@@ -5,7 +5,7 @@ up with the section.
 
 - Fix mobile animations for the AboutPage section.
 
-- Get a professional headshot.
-
 - Look into using a library for mobile resolution detection. Could be better
 than simply using resolution. Probably definitely is better.
+
+- Profile picture clips into the heading navbar if in collision.

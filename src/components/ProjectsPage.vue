@@ -36,7 +36,7 @@ export default {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    height: 100%;
+    min-height: 70vh;
     background-color: #b4fdc0;
     padding-bottom: 4px;
 }
@@ -50,7 +50,7 @@ export default {
 /* Mobile view. */
 @media only screen and (max-width: 767px) {
     .double-color-background {
-        background: linear-gradient(to bottom right, #53565a 25%, #013c50 40%, #013c50 60%, #53565a 75%);
+        background: linear-gradient(to bottom right, #53565a 25%, #497285 40%, #497285 60%, #53565a 75%);
     }
     
     .carousel {
@@ -65,7 +65,7 @@ export default {
     .double-color-background {
         height: 100%;
 
-        background: linear-gradient(to bottom right, #013c50 25%, #4f8157 40%, #4f8157 60%, #53565a 75%);
+        background: linear-gradient(to bottom right, #013c50 25%, #497285 40%, #497285 60%, #53565a 75%);
     }
     .carousel {
         display: flex;

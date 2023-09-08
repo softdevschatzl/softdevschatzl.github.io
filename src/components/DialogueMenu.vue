@@ -1,5 +1,5 @@
 <template>
-    <div class = "wrapper" @click = "toggleActive" :class = "{ active: isActive }">
+    <div class = "wrapper" ref = "menuWrapper" @click = "toggleActive" :class = "{ active: isActive }">
         <p class = "click-text">
             {{ title }} <span class = "arrow"></span>
         </p>
@@ -30,7 +30,19 @@ export default {
     methods: {
         toggleActive() {
             this.isActive = !this.isActive;
+            event.stopPropagation();
+        },
+        handleOutsideClick() {
+          if (!this.$refs.menuWrapper.contains(event.target) && this.isActive) {
+            this.isActive = false;
+          }
         }
+    },
+    mounted() {
+      window.addEventListener('click', this.handleOutsideClick);
+    },
+    beforeUnmount() {
+      window.removeEventListener('click', this.handleOutsideClick);
     }
 };
 </script>
@@ -43,18 +55,18 @@ export default {
   visibility: hidden;
   padding: 0;
   margin: 0;
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: 0.4s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transform: translateY(-100%);
-  transition: transform 0.8s ease, opacity 2s ease, visibility 2s ease;
+  transition: transform 0.8s ease, opacity 2s ease, visibility 2s ease, max-height 0.8s;
 
   &.active {
     transform: translateY(0);
     opacity: 1;
-    height: auto;
+    max-height: 1000px;
     visibility: visible;
   }
 }

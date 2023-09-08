@@ -1,5 +1,5 @@
 <template>
-    <div class = "wrapper" @click = "toggleActive" :class = "{ active: isActive }">
+    <div class = "wrapper" ref = "menuWrapper" @click = "toggleActive" :class = "{ active: isActive }">
         <p class = "click-text">
             {{ title }} <span class = "arrow"></span>
         </p>
@@ -33,10 +33,6 @@ export default {
             type: String,
             required: true,
         },
-        paragraph: {
-            type: String,
-            required: true,
-        },
     },
     data() {
         return {
@@ -46,10 +42,23 @@ export default {
           languages: ['Javascript', 'C / C++', 'Java', 'Python']
         };
     },
+
     methods: {
-        toggleActive() {
+        toggleActive(event) {
             this.isActive = !this.isActive;
+            event.stopPropagation();
+        },
+        handleOutsideClick(event) {
+          if (!this.$refs.menuWrapper.contains(event.target) && this.isActive) {
+            this.isActive = false;
+          }
         }
+    },
+    mounted() {
+      window.addEventListener('click', this.handleOutsideClick);
+    },
+    beforeUnmount() {
+      window.removeEventListener('click', this.handleOutsideClick);
     }
 };
 </script>
@@ -59,13 +68,17 @@ export default {
   display: flex;
   color: #fff;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
   opacity: 1;
   list-style-position: inside;
+  // width: 50%;
 }
 .skills-lists {
   display: flex;
   flex-direction: row;
+  // flex-wrap: wrap;
+  justify-content: center;
 }
 
 .para {
@@ -79,13 +92,13 @@ export default {
   visibility: hidden;
   padding: 0;
   margin: 0;
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: 0.4s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transform: translateY(-100%);
-  transition: transform 0.8s ease, opacity 2s ease, visibility 2s ease;
+  transition: transform 0.8s ease, opacity 2s ease, visibility 2s ease, max-height 0.8s;
 
   display: flex;
   flex-direction: column;
@@ -96,7 +109,7 @@ export default {
   &.active {
     transform: translateY(0);
     opacity: 1;
-    height: auto;
+    max-height: 1000px;
     visibility: visible;
     padding: 20px;
   }
@@ -284,8 +297,16 @@ p {
   .content {
     width: auto;
     flex-wrap: wrap;
+    // font-size: 0.8em;
+    padding: 0;
   }
-  
+
+  .skills-lists {
+    flex-wrap: wrap;
+  }
+  .skill-list {
+    width: 50%;
+  }
 }
 
 </style>

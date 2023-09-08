@@ -116,7 +116,7 @@ html {
 }
 
 .project-page {
-  min-height: 70vh;
+  min-height: 80vh;
 }
 
 /* Desktop resolutions */
@@ -247,6 +247,12 @@ html {
   animation: slideInLeft 1s forwards;
 }
 .slide-in-right {
+  animation: slideInRight 1.8s forwards;
+}
+.slide-in-right-7 {
+  animation: slideInRight 1.5s forwards;
+}
+.slide-in-right-5 {
   animation: slideInRight 1s forwards;
 }
 .slide-in-top {
@@ -258,5 +264,33 @@ html {
 
 [data-v-scroll] {
   opacity: 0;
+}
+
+@keyframes shake{
+  0%, 44%, 100% {
+      transform: rotate(0);
+      text-shadow: 0 1px 0 rgb(0 0 0 / 0%);
+  }
+  2%, 42% {
+      transform: rotate(5deg);
+  }
+  6%, 38% {
+      transform: rotate(-10deg);
+  }
+  10%, 34% {
+      transform: rotate(20deg);
+  }
+  14%, 22%, 30% {
+      transform: rotate(-25deg);
+      text-shadow: 0 1px 3px rgb(0 0 0 / 40%);
+  }
+  18%, 26% {
+      transform: rotate(25deg);
+  }
+}
+
+@keyframes rotateAnimation {
+	from {transform: rotateY(0deg);}
+	to {transform: rotateY(180deg);}
 }
 </style>
