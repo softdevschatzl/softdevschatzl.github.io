@@ -47,7 +47,7 @@ export default {
                 name: '',
                 message: ''
             },
-            resumeLink: 'http://bit.ly/3OWlMmK',
+            resumeLink: '../assets/schatzl-resume-dev.pdf',
             socialMediaLinks: [
                 {
                     name: 'LinkedIn',
