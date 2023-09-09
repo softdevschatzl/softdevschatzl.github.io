@@ -1,10 +1,5 @@
 TODO:
 
-- Scrolling through the menu options is funky on mobile, doesn't really line
-up with the section.
-
-- Fix mobile animations for the AboutPage section.
-
 - Look into using a library for mobile resolution detection. Could be better
 than simply using resolution. Probably definitely is better.
 

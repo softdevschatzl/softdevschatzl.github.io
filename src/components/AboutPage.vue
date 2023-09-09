@@ -1,14 +1,14 @@
 <template>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <div class = "about double-color-background">
-        <div class = "fade-in">
+        <div :class="isMobile ? '' : 'fade-in-2'" :data-v-scroll="isMobile ? 'fade-in-2' : undefined">
             <h1>{{ title }}</h1>
             <div class="container">
                 <img :src="require('@/assets/profile.png')" alt = "Profile picture" class = "profile-picture front-image" />
                 <img :src="require('@/assets/snowboard.png')" alt = "Profile picture" class = "profile-picture back-image" />
             </div>
             <p class = "header-p">I am a full-stack web and application developer.
-                I enjoy creating immersive user interfaces as well as
+                I enjoy creating immersive applications as well as
                 bulletproof, reliable back-end services.
             </p>
             <h2>{{ title2 }}</h2>
@@ -65,6 +65,22 @@ export default {
             title2: 'More About Me',
         };
     },
+    computed: {
+        isMobile() {
+            return window.innerWidth <= 767;
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', this.handleResize);
+    },
+    beforeUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    },
+    methods: {
+        handleResize() {
+            this.isMobile = window.innerWidth <= 767;
+        }
+    }
 };
 </script>
 

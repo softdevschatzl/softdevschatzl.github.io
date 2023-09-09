@@ -177,6 +177,7 @@ export default {
   flex-direction: row;
 }
 .projectimage {
+  position: relative;
   transition: transform 0.3s ease-in-out;
 }
 .projectimage:hover {

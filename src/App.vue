@@ -237,6 +237,9 @@ html {
 .fade-in {
   animation: fadeIn 1s forwards;
 }
+.fade-in-2 {
+  animation: fadeIn 2s forwards;
+}
 .slide-in-left {
   animation: slideInLeft 1.8s forwards;
 }

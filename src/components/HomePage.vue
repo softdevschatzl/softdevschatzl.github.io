@@ -24,7 +24,8 @@ export default {
             name: 'John Schatzl',
             titles: [
                 'Web / Application Developer',
-                'IT Technician',]
+                'IT Technician'
+            ]
         };
     },
 };
@@ -160,7 +161,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    /* gap: 20px; */
     z-index: 2;
     margin-bottom: 100px;
 }
@@ -177,7 +178,7 @@ export default {
     padding: .7em;
     width: 100%;
     z-index: 2;
-    min-height: 60px;
+    /* min-height: 60px; */
     align-items: center;
     justify-content: center;
 }
