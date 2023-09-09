@@ -27,7 +27,7 @@
         <!-- TODO: Make the download.png image work please. -->
         <div class="resume-download" data-v-scroll="fade-in"> 
             <p>Interested in my work? Download my resume:</p>
-            <a :href = resumeLink target = "_blank">
+            <a :href = resumeLink>
                 <img :src = "downloadIcon" class = "download-image" />
             </a>
         </div>
