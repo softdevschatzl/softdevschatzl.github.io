@@ -72,7 +72,7 @@ export default {
           title: "React Website",
           description: "A website I made for a local music producer to showcase skills with React and general front-end development.",
           images: [livesite, githubdark],
-          imageLinks: ["https://theschatzinator.github.io/WTFIBWebsite/", "https://github.com/theschatzinator/WTFIBWebsite"]
+          imageLinks: ["https://softdevschatzl.github.io/WTFIBWebsite/", "https://github.com/theschatzinator/WTFIBWebsite"]
         },
         // { className: "yellow" },
         // { className: "gray" },
