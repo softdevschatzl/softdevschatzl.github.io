@@ -27,7 +27,7 @@
         <!-- TODO: Make the download.png image work please. -->
         <div class="resume-download" data-v-scroll="fade-in"> 
             <p>Interested in my work? Download my resume:</p>
-            <a :href = resumeLink>
+            <a href = "/schatzl-resume-dev.pdf" target="_blank">
                 <img :src = "downloadIcon" class = "download-image" />
             </a>
         </div>
@@ -47,7 +47,6 @@ export default {
                 name: '',
                 message: ''
             },
-            resumeLink: '../assets/schatzl-resume-dev.pdf',
             socialMediaLinks: [
                 {
                     name: 'LinkedIn',
