@@ -27,7 +27,7 @@
         <!-- TODO: Make the download.png image work please. -->
         <div class="resume-download" data-v-scroll="fade-in"> 
             <p>Interested in my work? Download my resume:</p>
-            <a href = "/schatzl-resume-dev.pdf" target="_blank">
+            <a href = "/schatzl-resume-dev-2023.pdf" target="_blank">
                 <img :src = "downloadIcon" class = "download-image" />
             </a>
         </div>
@@ -36,7 +36,7 @@
 
 <script>
 import linkedinicon from '../assets/linkedin.svg';
-import twittericon from '../assets/twittericon.svg';
+import leetcodeicon from '../assets/leetcode.svg';
 import githubicon from '../assets/github.svg';
 import downloadicon from '../assets/download.png';
 
@@ -59,9 +59,9 @@ export default {
                     icon: githubicon
                 },
                 {
-                    name: 'Twitter',
-                    url: 'https://twitter.com/softdevschatz',
-                    icon: twittericon
+                    name: 'Leetcode',
+                    url: 'https://leetcode.com/theschatzinator/',
+                    icon: leetcodeicon
                 }
             ],
             downloadIcon: downloadicon
