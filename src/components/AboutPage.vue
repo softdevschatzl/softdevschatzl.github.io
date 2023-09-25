@@ -19,7 +19,8 @@
                 paragraph = "I am a student at Southern 
                     New Hampshire University studying Computer Science. I am also a
                     freelance web developer and application developer, and have been
-                    also working as an IT technician. Starting to program around the
+                    also working as a Full-Stack Software Developer specializing in cloud applications
+                    using Microsoft Azure and the ASP.NET Core and Framework. Starting to program around the
                     end of high school, I started with Java and later moved on to
                     C, JavaScript, HTML/CSS and Python for almost anything I can imagine creating. Seeing
                     my work come to life with these tools has sparked a passion in me
