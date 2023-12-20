@@ -24,7 +24,6 @@ export default {
             name: 'John Schatzl',
             titles: [
                 'Web / Application Developer',
-                'IT Technician'
             ]
         };
     },
