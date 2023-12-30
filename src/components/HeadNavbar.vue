@@ -6,10 +6,10 @@
                 <HamBurger />
             </div>
             <ul class = "slide-in-left-5">
-                <li><a href = "#about">About</a></li>
-                <li><a href = "#projects">Projects</a></li>
-                <li><a href = '#services'>Services</a></li>
-                <li><a href = "#contact">Contact</a></li>
+                <li :class="{ active: activeSection === 'about' }"><a href = "#about">About</a></li>
+                <li :class="{ active: activeSection === 'projects' }"><a href = "#projects">Projects</a></li>
+                <li :class="{ active: activeSection === 'services' }"><a href = '#services'>Services</a></li>
+                <li :class="{ active: activeSection === 'contact' }"><a href = "#contact">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -23,7 +23,31 @@ export default {
     data() {
         return {
             navOpen: false,
+            activeSection: null,
         };
+    },
+    mounted() {
+        window.addEventListener('scroll', this.onScroll);
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.onScroll);
+    },
+    methods: {
+        onScroll() {
+            const sections = ['about', 'projects', 'services', 'contact'];
+            let currentSection = null;
+
+            sections.forEach(section => {
+                const el = document.getElementById(section);
+                const rect = el.getBoundingClientRect();
+
+                if (rect.toip <= 50 && rect.bottom >= 50) {
+                    currentSection = section;
+                }
+            });
+
+            this.activeSection = currentSection;
+        }
     },
     components: {
         HamBurger,
@@ -74,6 +98,14 @@ nav ul li a::before {
 nav ul li a:hover::before {
     visibility: visible;
     width: 100%;
+}
+nav ul li.active {
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: border-width 0.3s ease;
+}
+nav ul li:not(.active) {
+    border: 2px solid transparent;
 }
 
 nav a {

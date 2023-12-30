@@ -72,6 +72,7 @@ export default {
   align-items: center;
   opacity: 1;
   list-style-position: inside;
+  margin-top: 10px;
   // width: 50%;
 }
 .skills-lists {

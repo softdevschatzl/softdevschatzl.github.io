@@ -15,6 +15,7 @@
         </div>
         <div class = "dialogue-menu fade-in">
             <DialogueMenu 
+                class="pwrapper"
                 title = "More Professional"
                 paragraph = "I am a student at Southern 
                     New Hampshire University studying Computer Science. I am also a
@@ -32,6 +33,7 @@
                     I have in this field."
             />
             <DialogueMenu 
+                class="pwrapper"
                 title = "More Personal"
                 paragraph = "When I'm not getting work done, you can usually find me watching
                     movies, playing video games and reading. I also enjoy snowboarding,
@@ -43,6 +45,7 @@
                     learn piano."
             />
             <DialogueMenuSkills
+                class="pwrapper"
                 title = "Professional Skills"
             />
         </div>
@@ -226,6 +229,9 @@ export default {
 
         .dialogue-menu {
             width: auto;
+        }
+        .pwrapper {
+            width: 80%;
         }
     }
 </style>

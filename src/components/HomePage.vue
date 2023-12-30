@@ -128,32 +128,32 @@ export default {
     height: 100%;
 } */
 
-    .home h1 span::before, h1 span::after {
-        visibility: hidden;
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 0;
-        transition: width 0.3s, height 0.3s ease-in-out;
-    }
-    .home h1 span::before {
-        top: 0;
-        left: 0;
-        border-top: 2px solid #ffffff;
-        border-left: 2px solid #ffffff;
-    }
+.home h1 span::before, h1 span::after {
+    visibility: hidden;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: width 0.3s, height 0.3s ease-in-out;
+}
+.home h1 span::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+}
 
-    .home h1 span::after {
-        bottom: 0;
-        right: 0;
-        border-bottom: 2px solid #ffffff;
-        border-right: 2px solid #ffffff;
-    }
-    .home h1 span:hover::before, .home h1 span:hover::after {
-        visibility: visible;
-        width: 100%;
-        height: 100%;
-    }
+.home h1 span::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+.home h1 span:hover::before, .home h1 span:hover::after {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+}
 
 .title-container {
     display: flex;
@@ -175,6 +175,7 @@ export default {
     color: #ffffff;
     font-size: 1em;
     padding: .7em;
+    margin-bottom: 5vh;
     width: 100%;
     z-index: 2;
     /* min-height: 60px; */
