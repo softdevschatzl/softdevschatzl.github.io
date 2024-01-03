@@ -73,6 +73,7 @@ export default {
 } */
 
 .home h1 {
+    width: 60%;
     margin-top: 100px;
     display: flex;
     font-size: 2em;
@@ -176,7 +177,7 @@ export default {
     font-size: 1em;
     padding: .7em;
     margin-bottom: 5vh;
-    width: 100%;
+    width: 70%;
     z-index: 2;
     /* min-height: 60px; */
     align-items: center;

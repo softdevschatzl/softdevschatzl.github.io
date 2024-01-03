@@ -129,8 +129,8 @@ export default {
 			a {
         text-decoration: none;
 				line-height: 1.6em;
-				font-size: 1.6em;
-				padding: .5em;
+				font-size: 1.2em;
+				padding: .8em;
 				display: block;
 				color: white;
 				transition: .4s ease;
