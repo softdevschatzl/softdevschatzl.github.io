@@ -31,22 +31,22 @@ export default {
     };
   },
   methods: {
-	navigateAndClose(target) {
-    const element = document.querySelector(target);
+		navigateAndClose(target) {
+			const element = document.querySelector(target);
 
-    if (element) {
-        const elementTopPosition = element.getBoundingClientRect().top;
-        const navbarHeight = 75; // adjust as needed
-        const offsetPosition = window.scrollY + elementTopPosition - navbarHeight;
+			if (element) {
+					const elementTopPosition = element.getBoundingClientRect().top;
+					const navbarHeight = 75; // adjust as needed
+					const offsetPosition = window.scrollY + elementTopPosition - navbarHeight;
 
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
-    }
-    
-    this.navOpen = false;
-	}
+					window.scrollTo({
+							top: offsetPosition,
+							behavior: "smooth"
+					});
+			}
+			
+			this.navOpen = false;
+		}
   }
 };
 </script>
@@ -56,7 +56,7 @@ export default {
 	nav {
 		width: auto;
 		// height: calc(100% - #{$headerHeight} - #{$footerHeight}); 
-		background: #53565a;
+		background: #46465e;
 		position: fixed;
 		top: 0;
 		left: 0;
