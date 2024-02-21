@@ -37,9 +37,9 @@ export default {
     data() {
         return {
           isActive: false,
-          frontEndItems: ['Vue.js', 'React', 'Bootstrap', 'CSS/HTML'],
+          frontEndItems: ['Vue.js', 'React', 'Tailwind', 'CSS/HTML'],
           backEndItems: ['MySQL', 'MongoDB', 'Node.js', 'Express.js'],
-          languages: ['Javascript', 'C#/C++', 'Java', 'Python', 'PHP']
+          languages: ['Javascript', 'C#/C++', 'Java', 'Python', 'Typescript']
         };
     },
 

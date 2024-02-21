@@ -16,6 +16,11 @@
                     <input class = "name" v-model="contact.name" id="name" type="text" required />
                 </div>
                 
+                <div class="email-box">
+                    <label for="email">Email:</label>
+                    <input class = "email" v-model="contact.email" id="email" type="email" required />
+                </div>
+                
                 <div class = "message-box">
                     <label for="message">Message:</label>
                     <textarea v-model="contact.message" id="message" required></textarea>
@@ -27,7 +32,7 @@
         <!-- TODO: Make the download.png image work please. -->
         <div class="resume-download" data-v-scroll="fade-in"> 
             <p>Interested in my work? Download my resume:</p>
-            <a href = "/schatzl-resume-dev-2023.pdf" target="_blank">
+            <a href = "/schatzl-resume-dev-2024.pdf" target="_blank">
                 <img :src = "downloadIcon" class = "download-image" />
             </a>
         </div>
@@ -45,6 +50,7 @@ export default {
         return {
             contact: {
                 name: '',
+                email: '',
                 message: ''
             },
             socialMediaLinks: [
@@ -83,6 +89,7 @@ export default {
                     window.alert("Message sent successfully!");
                     // Reset the form.
                     this.contact.name = '';
+                    this.contact.email = '';
                     this.contact.message = '';
                 } else {
                     // Failed to send message.
@@ -146,11 +153,11 @@ export default {
         justify-content: center;
         align-items: center;
     }
-    .name-box {
+    .name-box, .email-box {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .name-box input {
+    .name-box input, .email-box input {
         height: 30px;
         padding: 10px;
         border-radius: 20px;
