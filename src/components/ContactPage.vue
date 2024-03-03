@@ -61,7 +61,7 @@ export default {
                 },
                 {
                     name: 'GitHub',
-                    url: 'https://github.com/your_username',
+                    url: 'https://github.com/softdevschatzl',
                     icon: githubicon
                 },
                 {

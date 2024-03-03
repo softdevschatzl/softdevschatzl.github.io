@@ -3,7 +3,7 @@
     <div class = "home double-color-background">
         <h1 class="slide-in-left-5"><span> {{ name }} </span></h1>
         <div class = "socials slide-in-left-5">
-            <a class = "social" href = "https://github.com/theschatzinator" target = "_blank">
+            <a class = "social" href = "https://github.com/softdevschatzl" target = "_blank">
                 <span><img src = "../assets/github.svg"></span>
             </a>
             <a class = "social" href = "https://www.linkedin.com/in/john-schatzl" target = "_blank">

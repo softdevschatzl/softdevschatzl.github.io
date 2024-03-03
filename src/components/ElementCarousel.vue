@@ -60,26 +60,33 @@ export default {
         transitionName: "fade",
         show: false,
         slides: [
-        { 
-          className: "slide1",
-          title: "JumpCut",
-          description: "A Chrome extension that makes Google search querying an experience you never knew you needed.",
-          images: [chromewebstore, githubdark],
-          imageLinks: ["https://chrome.google.com/webstore/detail/jumpcut/fdipgkkflkdlimaeojpkpkhbemlikkbm", "https://github.com/theschatzinator/JumpCut"]
-        },
-        { 
-          className: "slide2",
-          title: "React Website",
-          description: "A website I made for a local music producer to showcase skills with React and general front-end development.",
-          images: [livesite, githubdark],
-          imageLinks: ["https://softdevschatzl.github.io/WTFIBWebsite/", "https://github.com/theschatzinator/WTFIBWebsite"]
-        },
-        // { className: "yellow" },
-        // { className: "gray" },
-        // { className: "green" },
-        // { className: "cyan" },
-        // { className: "brown" },
-        // { className: "orange" }
+          { 
+            className: "slide1",
+            title: "JumpCut",
+            description: "A Chrome extension that makes Google search querying an experience you never knew you needed.",
+            images: [chromewebstore, githubdark],
+            imageLinks: ["https://chrome.google.com/webstore/detail/jumpcut/fdipgkkflkdlimaeojpkpkhbemlikkbm", "https://github.com/theschatzinator/JumpCut"]
+          },
+          {
+            className: "slide2",
+            title: "Alexander's Rentals",
+            description: "A website I made to simplify the process of finding a rental in the Boston area. Repository and live access coming soon.",
+            images: [livesite, githubdark],
+            imageLinks: ["www.alexandersrentals.com", ""]
+          },
+          { 
+            className: "slide3",
+            title: "React Website",
+            description: "A website I made for a local music producer to showcase skills with React and general front-end development.",
+            images: [livesite, githubdark],
+            imageLinks: ["https://softdevschatzl.github.io/WTFIBWebsite/", "https://github.com/theschatzinator/WTFIBWebsite"]
+          },
+          // { className: "yellow" },
+          // { className: "gray" },
+          // { className: "green" },
+          // { className: "cyan" },
+          // { className: "brown" },
+          // { className: "orange" }
         ]
     }
   },
@@ -162,6 +169,9 @@ export default {
 }
 .slide-2-image-2 {
   width: 25%;
+}
+.slide3 {
+  background: #aaaaaa; /* Legacy: #f6b93b */
 }
 .yellow {background: #f6b93b;}
 .gray {background: gray;}
