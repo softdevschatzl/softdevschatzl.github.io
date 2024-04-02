@@ -68,7 +68,7 @@ export default {
         const animation = el.getAttribute("data-v-scroll");
 
         if (isInViewport && animation) {
-          el.computedStyleMap.opacity = '1'; // Make the element visible.
+          el.style.opacity = '1'; // Make the element visible.
           el.classList.add(animation); // Apply the given animation.
         }
       })

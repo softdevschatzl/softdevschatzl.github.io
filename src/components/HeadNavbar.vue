@@ -41,7 +41,7 @@ export default {
                 const el = document.getElementById(section);
                 const rect = el.getBoundingClientRect();
 
-                if (rect.toip <= 50 && rect.bottom >= 50) {
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
                     currentSection = section;
                 }
             });
@@ -56,6 +56,10 @@ export default {
 </script>
 
 <style scoped>
+.active a {
+    text-decoration: underline;
+}
+
 nav {
     position: sticky;
     top: 0;

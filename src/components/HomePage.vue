@@ -23,7 +23,7 @@ export default {
         return {
             name: 'John Schatzl',
             titles: [
-                'Web / Application Developer',
+                'Full Stack Developer',
             ]
         };
     },
