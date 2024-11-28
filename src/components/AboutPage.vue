@@ -8,7 +8,7 @@
                 <img :src="require('@/assets/snowboard.png')" alt = "Profile picture" class = "profile-picture back-image" />
             </div>
             <p class = "header-p">I am a full-stack web and application developer.
-                I enjoy creating immersive applications as well as
+                I enjoy creating immersive UIs as well as
                 bulletproof, reliable back-end services.
             </p>
             <h2>{{ title2 }}</h2>
@@ -18,19 +18,16 @@
                 class="pwrapper"
                 title = "More Professional"
                 paragraph = "I am a student at Southern 
-                    New Hampshire University studying Computer Science. I am also a
-                    freelance web developer and application developer, and have been
-                    also working as a Full-Stack Software Developer specializing in cloud applications
-                    using Microsoft Azure and the ASP.NET Core and Framework. Starting to program around the
-                    end of high school, I started with Java and later moved on to
-                    C, JavaScript, HTML/CSS and Python for almost anything I can imagine creating. Seeing
-                    my work come to life with these tools has sparked a passion in me
-                    to develop my skills and see what kinds of things I can make.
-                    I have a plethora of experience working efficiently in teams 
-                    to produce substantial progress, and have no trouble working
-                    with peers and clients alike. I am a great addition
-                    to any environment, and look forward to seeing the impact
-                    I have in this field."
+                    New Hampshire University studying Computer Science. I have 
+                    also been working as a Full-Stack Software Developer 
+                    using ASP.NET Core for the backend, and ASP WebForms and Angular for the frontend.
+                    While I have been involved in many projects, some notable ones include implementing
+                    Elasticsearch to replace the dated direct SQL search for our products, designing new
+                    home pages for many of the foreign brands, assisting in the planning and integration 
+                    of our new ERP software with our current website infrastructure, and developing an 
+                    internal survey app to allow sales reps to gauge a clients' needs in order to better 
+                    their marketing strategies, which also generates Word documents with the resulting 
+                    completed survey."
             />
             <DialogueMenu 
                 class="pwrapper"
@@ -38,9 +35,8 @@
                 paragraph = "When I'm not getting work done, you can usually find me watching
                     movies, playing video games and reading. I also enjoy snowboarding,
                     occasionally making trips up to the mountains when the weather
-                    calls for it, and fishing when it doesn't. I also enjoy traveling,
-                    having just gotten my passport last year, I am always looking to
-                    add some miles and stamps to it. I also enjoy both listening to and
+                    calls for it, and fishing when it doesn't. I also enjoy traveling, always looking to
+                    add some miles and stamps to my passport. I also enjoy both listening to and
                     playing music, playing guitar since I was young and also trying to
                     learn piano."
             />

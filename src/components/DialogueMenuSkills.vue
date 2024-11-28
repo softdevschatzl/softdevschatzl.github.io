@@ -37,9 +37,9 @@ export default {
     data() {
         return {
           isActive: false,
-          frontEndItems: ['Vue.js', 'React', 'Tailwind', 'CSS/HTML'],
-          backEndItems: ['MySQL', 'MongoDB', 'Node.js', 'Express.js'],
-          languages: ['Javascript', 'C#/C++', 'Java', 'Python', 'Typescript']
+          frontEndItems: ['Vue.js', 'React', 'Angular', 'Tailwind', 'Bootstrap', 'CSS/HTML'],
+          backEndItems: ['MSSQL Server', 'PostreSQL', 'Node.js', 'Express.js', '.NET', 'Firebase', 'AWS'],
+          languages: ['Javascript', 'C#/C++', 'Java', 'Python', 'Typescript', 'PHP']
         };
     },
 
@@ -80,6 +80,7 @@ export default {
   flex-direction: row;
   // flex-wrap: wrap;
   justify-content: center;
+  margin-top: -70px;
 }
 
 .para {
@@ -113,6 +114,7 @@ export default {
     max-height: 1000px;
     visibility: visible;
     padding: 20px;
+    height: 250px;
   }
 }
 .wrapper {

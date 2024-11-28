@@ -32,7 +32,7 @@
         <!-- TODO: Make the download.png image work please. -->
         <div class="resume-download" data-v-scroll="fade-in"> 
             <p>Interested in my work? Download my resume:</p>
-            <a href = "/schatzl-resume-dev-2024.pdf" target="_blank">
+            <a href = "/schatzl-resume-2025.pdf" target="_blank">
                 <img :src = "downloadIcon" class = "download-image" />
             </a>
         </div>
