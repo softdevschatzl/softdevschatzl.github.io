@@ -293,6 +293,12 @@ p {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+
+    &.active {
+      ul {
+        height: 200px;
+      }
+    }
   }
   .click-text {
     width: 100%;
@@ -302,13 +308,20 @@ p {
     flex-wrap: wrap;
     // font-size: 0.8em;
     padding: 0;
+
+    &.active {
+      max-height: 2000px;
+      height: auto;
+    }
   }
 
   .skills-lists {
     flex-wrap: wrap;
+    margin-top: 0px;
   }
   .skill-list {
     width: 50%;
+    height: 200px;
   }
 }
 
