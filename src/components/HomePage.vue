@@ -187,6 +187,7 @@ export default {
     position: relative;
     display: inline-block;
     padding: .5em;
+    margin-bottom: 50px;
 }
 .title span::before, .title span::after {
     visibility: hidden;

@@ -1,79 +1,13 @@
 <template>
-  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-  <div id = "app">
-    <div class = "header-home">
-      <div class = "head-navbar top">
-        <HeadNavbar />
-      </div>
-      <div class = "home-page" id = "top">
-        <HomePage />
-      </div>
-      <div class = "head-navbar bottom">
-        <HeadNavbar />
-      </div>
-    </div>
-    <div class = "body">
-      <div class = "about-page" id = "about">
-        <AboutPage />
-      </div>
-      <div class = "projects-page" id = "projects">
-        <ProjectsPage />
-      </div>
-      <div class = "service-page" id = "services">
-        <ServicePage />
-      </div>
-      <div class = "contact-page" id = "contact">
-        <ContactPage />
-      </div>
-    </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div id="app">
+    <router-view />
   </div>
 </template>
 
 <script>
-import HeadNavbar from './components/HeadNavbar.vue';
-import HomePage from './components/HomePage.vue';
-import AboutPage from './components/AboutPage.vue';
-import ProjectsPage from './components/ProjectsPage.vue';
-import ServicePage from './components/ServicePage.vue';
-import ContactPage from './components/ContactPage.vue';
-
 export default {
-  name: 'App',
-  components: {
-    HeadNavbar,
-    HomePage,
-    AboutPage,
-    ProjectsPage,
-    ServicePage,
-    ContactPage,
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll();
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  methods: {
-    // Essentially handling animations when an element is in the given viewport.
-    handleScroll() {
-      const elements = document.querySelectorAll("[data-v-scroll]");
-
-      elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const isInViewport = 
-          rect.top + rect.height * 0.7 <= window.innerHeight &&
-          rect.bottom - rect.height * 0.7 >= 0;
-
-        const animation = el.getAttribute("data-v-scroll");
-
-        if (isInViewport && animation) {
-          el.style.opacity = '1'; // Make the element visible.
-          el.classList.add(animation); // Apply the given animation.
-        }
-      })
-    }
-  }
+  name: 'App'
 };
 </script>
 

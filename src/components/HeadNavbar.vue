@@ -8,6 +8,7 @@
             <ul class = "slide-in-left-5">
                 <li :class="{ active: activeSection === 'about' }"><a href = "#about">About</a></li>
                 <li :class="{ active: activeSection === 'projects' }"><a href = "#projects">Projects</a></li>
+                <!-- <li><router-link to="/eportfolio" class="eportfolio-link">E-Portfolio</router-link></li> -->
                 <li :class="{ active: activeSection === 'services' }"><a href = '#services'>Services</a></li>
                 <li :class="{ active: activeSection === 'contact' }"><a href = "#contact">Contact</a></li>
             </ul>
@@ -39,10 +40,12 @@ export default {
 
             sections.forEach(section => {
                 const el = document.getElementById(section);
-                const rect = el.getBoundingClientRect();
+                if (el) {
+                    const rect = el.getBoundingClientRect();
 
-                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                    currentSection = section;
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                        currentSection = section;
+                    }
                 }
             });
 
@@ -115,6 +118,30 @@ nav ul li:not(.active) {
 nav a {
     color: white;
     text-decoration: none;
+}
+
+.eportfolio-link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.eportfolio-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.eportfolio-link:hover::before {
+    visibility: visible;
+    width: 100%;
 }
 
 /* Mobile view. */
