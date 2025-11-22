@@ -1,7 +1,7 @@
 <template>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <div class = "projects double-color-background">
-        <h1 data-v-scroll="fade-in">What I'm Working On</h1>
+    <div class = "projects section double-color-background">
+        <h1 class="section-header" data-v-scroll="fade-in">Personal Projects</h1>
         <div class = "carousel" data-v-scroll = "slide-in-bottom">
             <ProjectCarousel />
         </div>
@@ -31,20 +31,8 @@ export default {
 }
 
 .projects {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    min-height: 70vh;
     background-color: #b4fdc0;
     padding-bottom: 4px;
-}
-
-.projects h1 {
-    padding: 30px;
-    font-size: 2em;
-    color: #ffffff;
 }
 
 /* Mobile view. */

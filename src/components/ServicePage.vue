@@ -1,20 +1,35 @@
 <template>
-    <div class="services-section double-color-background">
-        <h2 data-v-scroll="fade-in">My Services</h2>
-        <p class = "section-p" data-v-scroll="fade-in">Discover a range of services tailored to elevate your business and personal presence online and on mobile devices, all created from scratch for the most versatility and personalization.</p>
+    <div class="services-section section double-color-background">
+        <h2 class="section-header" data-v-scroll="fade-in">Professional Experience</h2>
+        <div class="job-header" data-v-scroll="fade-in">
+            <h3 class="section-subheader job-title">Full Stack Developer</h3>
+            <p class="company-info">Desco Industries Inc. | July 2024 - Present</p>
+            <p class="section-description job-summary">
+                Supporting 15 eCommerce brands with comprehensive full-stack development across 
+                front-end, back-end integrations, SQL data pipelines, and production environment support.
+            </p>
+        </div>
     
         <div class="services-list">
             <div 
-                class="service-item" 
-                v-for="(service, index) in services" 
+                class="service-item card" 
+                v-for="(service, index) in responsibilities" 
                 :key="service.id" 
-                :data-v-scroll = "getAnimationClass(index)">
+                :data-v-scroll="getAnimationClass(index)">
                 <div class="service-icon">
                     <img :src="service.icon" :alt="service.title" />
                 </div>
                 <div class="service-content">
-                    <h3>{{ service.title }}</h3>
+                    <h4>{{ service.title }}</h4>
                     <p>{{ service.description }}</p>
+                    <div class="service-technologies">
+                        <span 
+                            v-for="tech in service.technologies" 
+                            :key="tech" 
+                            class="tech-tag">
+                            {{ tech }}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,37 +39,46 @@
 <script>
 import webicon from '../assets/web-icon.png';
 import applicationicon1 from '../assets/application-icon1.svg';
-//   import applicationicon2 from '../assets/application-icon2.png'
 import maintenanceicon from '../assets/maintenance-icon.png';
 
 export default {
     data() {
         return {
-            services: [
+            responsibilities: [
                 {
-                id: 1,
-                title: 'Web Development',
-                description: 'Modern, responsive, and tailored websites to showcase your business or personal brand.',
-                icon: webicon
+                    id: 1,
+                    title: 'Frontend Development & User Experience',
+                    description: 'Built internal Angular applications with Firebase authentication and real-time data workflows. Developed responsive interfaces for 15 eCommerce brands with focus on user experience and performance.',
+                    icon: webicon,
+                    technologies: ['Angular', 'TypeScript', 'Firebase Auth', 'HTML/CSS', 'Responsive Design']
                 },
                 {
-                id: 2,
-                title: 'Application Development',
-                description: 'Custom applications built for both mobile and desktop to meet your specific needs.',
-                icon: [applicationicon1]
+                    id: 2,
+                    title: 'Backend Systems & Data Architecture',
+                    description: 'Implemented Elasticsearch indexing and search pipelines to improve product discovery. Developed secure payment processing flows with CyberSource integration including tokenization and 3DS authentication.',
+                    icon: applicationicon1,
+                    technologies: ['Elasticsearch', '.NET Core', 'CyberSource', 'Red Maple', 'SQL Pipelines']
                 },
                 {
-                id: 3,
-                title: 'Maintenance & Support',
-                description: 'Ongoing support and updates for your web or application projects as well as many general tech needs.',
-                icon: maintenanceicon
+                    id: 3,
+                    title: 'Infrastructure & Production Support',
+                    description: 'Managed IIS/Windows Server infrastructure including deployment pipelines, SSL management, and scheduled tasks. Redesigned enterprise server cabinets and handled hardware upgrades.',
+                    icon: maintenanceicon,
+                    technologies: ['IIS', 'Windows Server', 'SSL/TLS', 'CI/CD', 'Hardware Management']
+                },
+                {
+                    id: 4,
+                    title: 'Database Optimization & ERP Integration',
+                    description: 'Migrated legacy ERP integrations from Navision to Business Central with SQL view redesign, stored procedure optimization and enhanced, abstracted data pipelines. Refactored SQL Server tables and indexes for multi-million-row datasets.',
+                    icon: applicationicon1,
+                    technologies: ['SQL Server', 'Business Central', 'ETL', 'Stored Procedures', 'Performance Tuning']
                 }
             ]
         };
     },
     methods: {
         getAnimationClass(index) {
-            const animationClasses = ['slide-in-left', 'slide-in-left-7', 'slide-in-left-5'];
+            const animationClasses = ['slide-in-left', 'slide-in-left-7', 'slide-in-left-5', 'slide-in-left'];
             return animationClasses[index % animationClasses.length];
         }
     }
@@ -63,72 +87,102 @@ export default {
 
 <style scoped>
 .services-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
-    padding: 50px;
-    text-align: center;
     background-color: #53565a;
     color: #fff;
-    min-height: 70vh;
+}
+
+.job-header {
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.company-info {
+    font-size: 1.3em;
+    color: #b8c6db;
+    margin-bottom: 20px;
+    font-weight: 500;
+    justify-content: center;
+    display: flex;
+    text-align: center;
 }
 
 .services-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    max-width: 1200px;
 }
 
 .service-item {
-    flex: 0 1 calc(33.3333% - 20px); 
+    flex: 0 1 calc(50% - 20px); 
     margin: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
     text-align: left;
-    background-color: #dddddd;
-    color: #000;
-}
-.service-item h3 {
-    margin-bottom: 15px;
 }
 
 .service-icon img {
     width: 50px;
     height: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.double-color-background {
-    background: linear-gradient(to bottom right, #497285 10%, #53565a 25%, #53565a 70%, #013c50 85%);
+.service-technologies {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
 }
+
+.service-item .tech-tag {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: 500;
+    text-transform: none;
+    border-left: 3px solid #e74c3c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-item .tech-tag:hover {
+    background: #34495e;
+    border-left-color: #f39c12;
+    transform: translateX(3px);
+}
+
+
 
 /* Mobile view */
 @media only screen and (max-width: 767px) {
-    h2 {
-        margin-bottom: 30px;
+    .company-info {
+        font-size: 1.1em;
     }
-    .section-p {
-        margin-bottom: 30px;
-    }
-    .double-color-background {
-        background: linear-gradient(to bottom right, #497285 10%, #53565a 25%, #53565a 70%, #013c50 85%);
-    }
-
+    
     .service-item {
-        display: flex;
-        flex-wrap: wrap;
+        flex: 0 1 100%;
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .service-item {
+        flex: 0 1 calc(50% - 20px);
     }
 }
 
 @media only screen and (min-width: 768px) {
-    h2 {
-        margin-bottom: 30px;
+    .job-header {
+        margin-bottom: 50px;
     }
-    .section-p {
-        margin-bottom: 30px;
-        width: 50%;
+}
+
+@media only screen and (min-width: 1200px) {
+    .service-item {
+        flex: 0 1 calc(50% - 30px);
+        margin: 15px;
     }
 }
 </style>

@@ -107,6 +107,119 @@ html {
   }
 }
 
+/* GLOBAL SECTION STYLING */
+.section-header {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-subheader {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #e8e8e8;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Global card styling for consistency */
+.card {
+  background-color: #dddddd;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3, .card h4 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.4em;
+}
+
+.card h4 {
+  font-size: 1.3em;
+}
+
+.card p {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Technology tags styling */
+.tech-tag {
+  background-color: #3498db;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 500;
+  display: inline-block;
+  margin: 2px;
+}
+
+/* Double color background for sections */
+.double-color-background {
+  background: linear-gradient(to bottom right, #497285 10%, #53565a 25%, #53565a 70%, #013c50 85%);
+}
+
+/* Section container styling */
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 70vh;
+}
+
+/* Responsive section headers */
+@media only screen and (max-width: 767px) {
+  .section-header {
+    font-size: 2em;
+  }
+  
+  .section-subheader {
+    font-size: 1.5em;
+  }
+  
+  .section-description {
+    font-size: 1em;
+  }
+  
+  .section {
+    padding: 30px 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .section-header {
+    font-size: 2.2em;
+  }
+}
+
 /* ANIMATIONS */
 
 /* Fade-in */

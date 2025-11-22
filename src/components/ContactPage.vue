@@ -1,7 +1,7 @@
 <template>
-    <div class="contact-section double-color-background">
-        <h2 data-v-scroll = "fade-in">Contact Me</h2>
-        <p data-v-scroll="fade-in">Feel free to reach out or connect with me on social media.</p>
+    <div class="contact-section section double-color-background">
+        <h2 class="section-header" data-v-scroll = "fade-in">Contact Me</h2>
+        <p class="section-description" data-v-scroll="fade-in">Feel free to reach out or connect with me on social media.</p>
 
         <div class="socials" data-v-scroll="fade-in">
             <a v-for="social in socialMediaLinks" :key="social.name" :href="social.url" target="_blank" rel="noopener noreferrer">

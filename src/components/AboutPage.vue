@@ -2,7 +2,7 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <div class = "about double-color-background">
         <div :class="isMobile ? '' : 'fade-in-2'" :data-v-scroll="isMobile ? 'fade-in-2' : undefined">
-            <h1>{{ title }}</h1>
+            <h1 class="section-header">{{ title }}</h1>
             <div class="container">
                 <img :src="require('@/assets/profile.png')" alt = "Profile picture" class = "profile-picture front-image" />
                 <img :src="require('@/assets/snowboard.png')" alt = "Profile picture" class = "profile-picture back-image" />
@@ -85,13 +85,13 @@ export default {
 </script>
 
 <style scoped>
-    h1 {
+    /* h1 {
         margin-bottom: 25px;
         margin-top: 25px;
         font-size: 1.5em;
         color: #ffffff;
         padding: 10px;
-    }
+    } */
 
     h2 {
         margin-bottom: 10px;

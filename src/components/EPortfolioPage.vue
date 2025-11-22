@@ -1,9 +1,9 @@
 <template>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div class="eportfolio double-color-background">
-        <h1 data-v-scroll="fade-in">Class E-Portfolio</h1>
+    <div class="eportfolio section double-color-background">
+        <h1 class="section-header" data-v-scroll="fade-in">Class E-Portfolio</h1>
         <div class="portfolio-intro" data-v-scroll="slide-in-left">
-            <p>Welcome to my academic e-portfolio showcasing enhanced projects and learning outcomes from my coursework.</p>
+            <p class="section-description">Welcome to my academic e-portfolio showcasing enhanced projects and learning outcomes from my coursework.</p>
         </div>
         <div class="projects-grid" data-v-scroll="slide-in-bottom">
             <EPortfolioProject 
@@ -14,8 +14,8 @@
             />
         </div>
         <div class="reflection-section" data-v-scroll="slide-in-right">
-            <h2>Learning Reflection</h2>
-            <p>This collection represents my growth and enhanced understanding throughout the course. Each project demonstrates specific learning outcomes and improvements made through iterative development.</p>
+            <h2 class="section-subheader">Learning Reflection</h2>
+            <p class="section-description">This collection represents my growth and enhanced understanding throughout the course. Each project demonstrates specific learning outcomes and improvements made through iterative development.</p>
         </div>
     </div>
 </template>

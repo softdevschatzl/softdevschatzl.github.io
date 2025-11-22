@@ -9,7 +9,7 @@
                 <li :class="{ active: activeSection === 'about' }"><a href = "#about">About</a></li>
                 <li :class="{ active: activeSection === 'projects' }"><a href = "#projects">Projects</a></li>
                 <!-- <li><router-link to="/eportfolio" class="eportfolio-link">E-Portfolio</router-link></li> -->
-                <li :class="{ active: activeSection === 'services' }"><a href = '#services'>Services</a></li>
+                <li :class="{ active: activeSection === 'services' }"><a href = '#services'>Experience</a></li>
                 <li :class="{ active: activeSection === 'contact' }"><a href = "#contact">Contact</a></li>
             </ul>
         </nav>

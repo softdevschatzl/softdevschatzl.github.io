@@ -13,7 +13,7 @@
             <li class="sidemenu__item"><a href="#top" @click.prevent="navigateAndClose('#top')">Top</a></li>
             <li class="sidemenu__item"><a href="#about" @click.prevent="navigateAndClose('#about')">About</a></li>
             <li class="sidemenu__item"><a href="#projects" @click.prevent="navigateAndClose('#projects')">Projects</a></li>
-            <li class="sidemenu__item"><a href="#services" @click.prevent="navigateAndClose('#services')">Services</a></li>
+            <li class="sidemenu__item"><a href="#services" @click.prevent="navigateAndClose('#services')">Professional Experience</a></li>
             <li class="sidemenu__item"><a href="#contact" @click.prevent="navigateAndClose('#contact')">Contact</a></li>
           </ul>
         </div>

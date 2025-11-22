@@ -1,6 +1,6 @@
 <template>
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <div class = "home double-color-background">
+    <div class = "home">
         <h1 class="slide-in-left-5"><span> {{ name }} </span></h1>
         <div class = "socials slide-in-left-5">
             <a class = "social" href = "https://github.com/softdevschatzl" target = "_blank">
