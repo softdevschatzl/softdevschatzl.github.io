@@ -20,5 +20,9 @@ yarn build
 yarn lint
 ```
 
+### Building for production
+npm install
+npm run deploy
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
