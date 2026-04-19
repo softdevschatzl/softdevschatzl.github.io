@@ -17,14 +17,14 @@
             <DialogueMenu 
                 class="pwrapper"
                 title = "More Professional"
-                paragraph = "I am a student at Southern 
-                    New Hampshire University studying Computer Science. I have 
+                paragraph = "I studied computer science at UMass Boston and Southern New Hampshire University. I have 
                     also been working as a Full-Stack Software Developer 
                     using ASP.NET Core for the backend, and ASP WebForms and Angular for the frontend.
                     While I have been involved in many projects, some notable ones include implementing
                     Elasticsearch to replace the dated direct SQL search for our products, designing new
                     home pages for many of the foreign brands, assisting in the planning and integration 
-                    of our new ERP software with our current website infrastructure, and developing an 
+                    of our new ERP software with our current website infrastructure, implementing secure
+                    credit card authorization flow to Business Central, and developing an 
                     internal survey app to allow sales reps to gauge a clients' needs in order to better 
                     their marketing strategies, which also generates Word documents with the resulting 
                     completed survey."
@@ -33,7 +33,7 @@
                 class="pwrapper"
                 title = "More Personal"
                 paragraph = "When I'm not getting work done, you can usually find me watching
-                    movies, playing video games and reading. I also enjoy snowboarding,
+                    movies, playing video games and playing music. I also enjoy snowboarding,
                     occasionally making trips up to the mountains when the weather
                     calls for it, and fishing when it doesn't. I also enjoy traveling, always looking to
                     add some miles and stamps to my passport. I also enjoy both listening to and

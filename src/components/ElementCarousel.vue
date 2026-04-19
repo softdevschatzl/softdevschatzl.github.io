@@ -81,19 +81,19 @@ export default {
     return {
       current: 0,
       slides: [
-        {
-          id: 1,
-          title: "Alexander's Rentals",
-          description: "A website I made to simplify the process of finding a rental in the Boston area, used by a local brokerage and hundreds of clients. With more features to come.",
-          images: [livesite, githubdark],
-          imageLinks: ["https://alexandersrentals.com", "https://github.com/softdevschatzl/alexanders-rentals"]
-        },
         { 
-          id: 2,
+          id: 1,
           title: "JumpCut",
           description: "A Chrome extension that makes Google search querying an experience you never knew you needed.",
           images: [chromewebstore, githubdark],
           imageLinks: ["https://chrome.google.com/webstore/detail/jumpcut/fdipgkkflkdlimaeojpkpkhbemlikkbm", "https://github.com/theschatzinator/JumpCut"]
+        },
+        {
+          id: 2,
+          title: "Alexander's Rentals",
+          description: "A website I made to simplify the process of finding a rental in the Boston area, used by a local brokerage and hundreds of clients. With more features to come.",
+          images: [livesite, githubdark],
+          imageLinks: ["https://softdevschatzl.github.io/AlexandersRentals/", "https://github.com/softdevschatzl/bostonrentals"]
         },
         { 
           id: 3,
