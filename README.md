@@ -20,7 +20,7 @@ yarn build
 yarn lint
 ```
 
-### Building for production
+### Building for production (gh-pages)
 npm install
 npm run deploy
 
